@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Risk Insights | Shubham Malpani</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #ffffff;
+            color: #333;
+        }
+
+        .container {
+            max-width: 950px;
+            margin: auto;
+            padding: 40px;
+        }
+
+        nav {
+            background-color: #f4f4f4;
+            padding: 15px 40px;
+        }
+
+        nav a {
+            margin-right: 20px;
+            text-decoration: none;
+            font-weight: bold;
+            color: #333;
+        }
+
+        h1 {
+            font-size: 36px;
+        }
+
+        .article {
+            margin-top: 50px;
+        }
+
+        .meta {
+            font-style: italic;
+            color: #555;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+
+<nav>
+    <a href="index.html">Home</a>
+    <a href="Shubham_Malpani_CV.pdf" target="_blank">Resume</a>
+    <a href="projects.html">Projects</a>
+    <a href="insights.html">Risk Insights</a>
+    <a href="https://www.linkedin.com/in/shubham-malpani97" target="_blank">LinkedIn</a>
+</nav>
+
+<div class="container">
+
+    <h1>Risk Analytics Insights</h1>
+
+    <div class="article">
+        <h3>Why Chronological Train-Test Split Is Critical in PD Modelling</h3>
+        <div class="meta">Model Validation | Regulatory Perspective</div>
+        <p>
+            In credit risk modelling, random train-test splits can introduce forward-looking bias, 
+            especially when behavioural variables evolve over time. A chronological split ensures that 
+            models are validated on genuinely unseen future data, reflecting how risk models operate 
+            in live portfolio monitoring environments.
+        </p>
+        <p>
+            This approach strengthens backtesting discipline and aligns more closely with regulatory 
+            expectations around model stability and out-of-time performance validation.
+        </p>
+    </div>
+
+    <div class="article">
+        <h3>Data Leakage: The Most Underestimated Risk in Credit Models</h3>
+        <div class="meta">Feature Engineering | Governance</div>
+        <p>
+            Data leakage can artificially inflate model performance and create a false sense of predictive power. 
+            Variables derived from post-default outcomes, repayment behaviour, or recovery processes may 
+            inadvertently embed future information into the model.
+        </p>
+        <p>
+            Rigorous feature screening using business logic, Information Value checks, and temporal filtering 
+            is essential to preserve model integrity and regulatory defensibility.
+        </p>
+    </div>
+
+    <div class="article">
+        <h3>Interpreting Gini and KS Beyond ROC-AUC</h3>
+        <div class="meta">Model Performance | Portfolio Risk</div>
+        <p>
+            While ROC-AUC is commonly referenced, Gini coefficient and KS statistic provide complementary 
+            insights into discriminatory power. Gini reflects overall ranking quality, while KS measures 
+            separation between good and bad borrowers at the most discriminative cutoff.
+        </p>
+        <p>
+            Sustainable performance requires not only high discrimination but also stability over time, 
+            particularly under macroeconomic stress conditions.
+        </p>
+    </div>
+
+    <div class="article">
+        <h3>From Theory to Implementation: Translating IFRS 9 Into Code</h3>
+        <div class="meta">Expected Credit Loss | Practical Modelling</div>
+        <p>
+            IFRS 9 requires forward-looking expected credit loss estimation rather than incurred loss recognition. 
+            Translating this into code involves integrating PD, LGD, and EAD components while incorporating 
+            scenario-based adjustments and macroeconomic overlays.
+        </p>
+        <p>
+            The true challenge is balancing statistical robustness with regulatory transparency and explainability.
+        </p>
+    </div>
+
+</div>
+
+</body>
+</html>
