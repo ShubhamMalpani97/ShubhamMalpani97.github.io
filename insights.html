@@ -2,56 +2,64 @@
 <html>
 <head>
     <title>Risk Insights | Shubham Malpani</title>
+
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+
     <style>
         body {
             font-family: 'Inter', sans-serif;
             margin: 0;
             padding: 0;
             background-color: #ffffff;
-            color: #333;
-        }
-
-        .container {
-            max-width: 950px;
-            margin: auto;
-            padding: 40px;
+            color: #1a1a1a;
+            line-height: 1.7;
         }
 
         nav {
-            background-color: #f4f4f4;
-            padding: 15px 40px;
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            padding: 20px 0;
+            border-bottom: 1px solid #eee;
+            background-color: #fafafa;
         }
 
         nav a {
-            margin-right: 20px;
             text-decoration: none;
-            font-weight: bold;
-            color: #333;
+            font-weight: 600;
+            color: #1f3c88;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: auto;
+            padding: 80px 30px;
         }
 
         h1 {
-            font-size: 36px;
+            font-size: 40px;
+            margin-bottom: 50px;
         }
 
         .article {
-            margin-top: 50px;
+            margin-bottom: 60px;
         }
 
         .meta {
-            font-style: italic;
             color: #555;
+            font-size: 14px;
             margin-bottom: 10px;
         }
     </style>
 </head>
+
 <body>
 
 <nav>
     <a href="index.html">Home</a>
-    <a href="Shubham_Malpani_CV.pdf" target="_blank">Resume</a>
     <a href="projects.html">Projects</a>
     <a href="insights.html">Risk Insights</a>
+    <a href="Shubham_Malpani_CV.pdf" target="_blank">Resume</a>
     <a href="https://www.linkedin.com/in/shubham-malpani97" target="_blank">LinkedIn</a>
 </nav>
 
@@ -60,58 +68,31 @@
     <h1>Risk Analytics Insights</h1>
 
     <div class="article">
-        <h3>Why Chronological Train-Test Split Is Critical in PD Modelling</h3>
-        <div class="meta">Model Validation | Regulatory Perspective</div>
+        <h3>Chronological Validation in PD Modelling</h3>
+        <div class="meta">Model Validation | Stability</div>
         <p>
-            In credit risk modelling, random train-test splits can introduce forward-looking bias, 
-            especially when behavioural variables evolve over time. A chronological split ensures that 
-            models are validated on genuinely unseen future data, reflecting how risk models operate 
-            in live portfolio monitoring environments.
-        </p>
-        <p>
-            This approach strengthens backtesting discipline and aligns more closely with regulatory 
-            expectations around model stability and out-of-time performance validation.
+            Random splits may introduce forward-looking bias in behavioural credit datasets.
+            Chronological validation better simulates real portfolio deployment and
+            strengthens out-of-time performance assessment.
         </p>
     </div>
 
     <div class="article">
-        <h3>Data Leakage: The Most Underestimated Risk in Credit Models</h3>
-        <div class="meta">Feature Engineering | Governance</div>
+        <h3>Data Leakage in Credit Risk Models</h3>
+        <div class="meta">Governance | Feature Engineering</div>
         <p>
-            Data leakage can artificially inflate model performance and create a false sense of predictive power. 
-            Variables derived from post-default outcomes, repayment behaviour, or recovery processes may 
-            inadvertently embed future information into the model.
-        </p>
-        <p>
-            Rigorous feature screening using business logic, Information Value checks, and temporal filtering 
-            is essential to preserve model integrity and regulatory defensibility.
+            Incorporating post-default information can artificially inflate performance.
+            Strong feature discipline and business logic screening are critical for
+            regulatory defensibility.
         </p>
     </div>
 
     <div class="article">
-        <h3>Interpreting Gini and KS Beyond ROC-AUC</h3>
-        <div class="meta">Model Performance | Portfolio Risk</div>
+        <h3>Gini, KS and CAP: Interpreting Discriminatory Power</h3>
+        <div class="meta">Performance Diagnostics</div>
         <p>
-            While ROC-AUC is commonly referenced, Gini coefficient and KS statistic provide complementary 
-            insights into discriminatory power. Gini reflects overall ranking quality, while KS measures 
-            separation between good and bad borrowers at the most discriminative cutoff.
-        </p>
-        <p>
-            Sustainable performance requires not only high discrimination but also stability over time, 
-            particularly under macroeconomic stress conditions.
-        </p>
-    </div>
-
-    <div class="article">
-        <h3>From Theory to Implementation: Translating IFRS 9 Into Code</h3>
-        <div class="meta">Expected Credit Loss | Practical Modelling</div>
-        <p>
-            IFRS 9 requires forward-looking expected credit loss estimation rather than incurred loss recognition. 
-            Translating this into code involves integrating PD, LGD, and EAD components while incorporating 
-            scenario-based adjustments and macroeconomic overlays.
-        </p>
-        <p>
-            The true challenge is balancing statistical robustness with regulatory transparency and explainability.
+            Gini reflects ranking quality, KS measures maximum separation, and CAP curves
+            provide intuitive portfolio-level interpretation of default capture efficiency.
         </p>
     </div>
 
