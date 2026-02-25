@@ -74,23 +74,34 @@
 
     <!-- Project 1 -->
     <div class="project">
-        <h3>End-to-End Credit Risk Modelling (PD, LGD, EAD)</h3>
-        <div class="meta">Dataset: Lending Club 2007-2014 | Python | Regulatory Modelling Framework</div>
-
-        <p>
-            Built a full credit risk framework to estimate Expected Loss using PD, LGD, and EAD components. 
-            Implemented feature engineering using Fine & Coarse Classing, Weight of Evidence (WoE), 
-            and Information Value (IV) for predictive variable selection.
-        </p>
-
-        <p>
-            Developed a Logistic Regression PD model transformed into a scorecard (300–850 range), 
-            and validated performance using Gini coefficient, KS statistic, and CAP curves.
-        </p>
-
-        <a href="https://github.com/ShubhamMalpani97/credit-risk-pd-lgd-ead" 
-           class="btn" target="_blank">View Repository</a>
+    <h3>End-to-End Credit Risk Modelling (PD, LGD, EAD)</h3>
+    <div class="meta">
+        Dataset: Lending Club 2007–2014 | Logistic Regression Scorecard | Regulatory Framework
     </div>
+
+    <p>
+        Built a full Expected Loss framework estimating Probability of Default (PD), 
+        Loss Given Default (LGD), and Exposure at Default (EAD). 
+        Implemented Fine & Coarse Classing, Weight of Evidence (WoE), and 
+        Information Value (IV) for feature selection and model interpretability.
+    </p>
+
+    <p>
+        <strong>Model Performance (Out-of-Sample):</strong><br>
+        AUROC: 0.702<br>
+        Gini Coefficient: 0.404<br>
+        KS Statistic: 0.297
+    </p>
+
+    <p>
+        Developed a scorecard scaled between 300–850 for PD interpretation. 
+        Validation performed using train-test split methodology with scikit-learn, 
+        supported by Gini, KS, and CAP curve diagnostics to evaluate discriminatory power.
+    </p>
+
+    <a href="https://github.com/ShubhamMalpani97/credit-risk-pd-lgd-ead"
+       class="btn" target="_blank">View Repository</a>
+</div>
 
     <!-- Project 2 -->
     <div class="project">
