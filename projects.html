@@ -34,11 +34,17 @@
         }
 
         .project {
-            margin-top: 40px;
+            margin-top: 50px;
         }
 
-        .highlight {
-            font-weight: bold;
+        .project h3 {
+            margin-bottom: 8px;
+        }
+
+        .meta {
+            font-style: italic;
+            color: #555;
+            margin-bottom: 10px;
         }
 
         a.btn {
@@ -58,44 +64,71 @@
     <a href="index.html">Home</a>
     <a href="Shubham_Malpani_CV.pdf" target="_blank">Resume</a>
     <a href="projects.html">Projects</a>
+    <a href="insights.html">Risk Insights</a>
     <a href="https://www.linkedin.com/in/shubham-malpani97" target="_blank">LinkedIn</a>
 </nav>
 
 <div class="container">
 
-    <h1>Selected Projects</h1>
+    <h1>Selected Technical Projects</h1>
 
+    <!-- Project 1 -->
     <div class="project">
-        <h3>End-to-End Probability of Default (PD) Model</h3>
+        <h3>End-to-End Credit Risk Modelling (PD, LGD, EAD)</h3>
+        <div class="meta">Dataset: Lending Club 2007-2014 | Python | Regulatory Modelling Framework</div>
+
         <p>
-            Built a full credit risk modelling pipeline using a high-volume dataset (460,000+ records).
-            Implemented WOE/IV feature engineering, Logistic Regression, ROC-AUC, Gini and KS metrics
-            for model validation aligned with Basel III regulatory principles.
+            Built a full credit risk framework to estimate Expected Loss using PD, LGD, and EAD components. 
+            Implemented feature engineering using Fine & Coarse Classing, Weight of Evidence (WoE), 
+            and Information Value (IV) for predictive variable selection.
         </p>
-        <a href="https://github.com/ShubhamMalpani97" class="btn" target="_blank">
-            View Code
-        </a>
+
+        <p>
+            Developed a Logistic Regression PD model transformed into a scorecard (300–850 range), 
+            and validated performance using Gini coefficient, KS statistic, and CAP curves.
+        </p>
+
+        <a href="https://github.com/ShubhamMalpani97/credit-risk-pd-lgd-ead" 
+           class="btn" target="_blank">View Repository</a>
     </div>
 
+    <!-- Project 2 -->
     <div class="project">
-        <h3>LGD and EAD Risk Modelling Framework</h3>
+        <h3>Binomial Tree Option Pricing Model (Nifty 50)</h3>
+        <div class="meta">Python | Derivatives Modelling | Live Market Data</div>
+
         <p>
-            Developed Loss Given Default and Exposure at Default estimation models
-            supporting IFRS 9 expected credit loss calculations. Performed segmentation,
-            scenario analysis and stress-testing.
+            Implemented a multi-step Binomial Tree model to price American and European options 
+            using risk-neutral valuation principles.
         </p>
-        <a href="https://github.com/ShubhamMalpani97" class="btn" target="_blank">
-            View Code
-        </a>
+
+        <p>
+            Integrated live Nifty 50 data via yfinance and used NetworkX to render dynamic pricing trees, 
+            visualising backward induction and early exercise mechanics.
+        </p>
+
+        <a href="https://github.com/ShubhamMalpani97/binomial-tree-option-pricing-model" 
+           class="btn" target="_blank">View Repository</a>
     </div>
 
+    <!-- Project 3 -->
     <div class="project">
-        <h3>Automated Reconciliation & Counterparty Risk Model</h3>
+        <h3>Black-Scholes Option Pricing Model (Nifty 50)</h3>
+        <div class="meta">Python | Quantitative Finance | Volatility Estimation</div>
+
         <p>
-            Engineered a reconciliation framework covering 120+ entities,
-            reducing data inconsistencies by 40% and reporting discrepancies by 33%.
-            Enhanced risk grading accuracy through multi-ratio financial analysis.
+            Developed a Python-based implementation of the Black-Scholes model using real-time 
+            Nifty 50 data. Calculated annualised volatility from historical returns rather than 
+            relying on static assumptions.
         </p>
+
+        <p>
+            Analysed pricing sensitivity to volatility and time-to-expiry, translating continuous 
+            compounding and probability density functions into vectorised Python code.
+        </p>
+
+        <a href="https://github.com/ShubhamMalpani97/black-scholes-nifty50" 
+           class="btn" target="_blank">View Repository</a>
     </div>
 
 </div>
