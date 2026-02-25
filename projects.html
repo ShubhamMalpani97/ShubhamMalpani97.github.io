@@ -2,70 +2,92 @@
 <html>
 <head>
     <title>Projects | Shubham Malpani</title>
+
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+
     <style>
         body {
             font-family: 'Inter', sans-serif;
             margin: 0;
             padding: 0;
             background-color: #ffffff;
-            color: #333;
-        }
-
-        .container {
-            max-width: 950px;
-            margin: auto;
-            padding: 40px;
+            color: #1a1a1a;
+            line-height: 1.7;
         }
 
         nav {
-            background-color: #f4f4f4;
-            padding: 15px 40px;
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            padding: 20px 0;
+            border-bottom: 1px solid #eee;
+            background-color: #fafafa;
         }
 
         nav a {
-            margin-right: 20px;
             text-decoration: none;
-            font-weight: bold;
-            color: #333;
+            font-weight: 600;
+            color: #1f3c88;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: auto;
+            padding: 80px 30px;
         }
 
         h1 {
-            font-size: 36px;
+            font-size: 40px;
+            margin-bottom: 40px;
         }
 
         .project {
-            margin-top: 50px;
-        }
-
-        .project h3 {
-            margin-bottom: 8px;
+            background-color: #f9fafb;
+            padding: 35px;
+            border-radius: 10px;
+            margin-bottom: 50px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.04);
         }
 
         .meta {
-            font-style: italic;
             color: #555;
-            margin-bottom: 10px;
+            font-size: 14px;
+            margin-bottom: 15px;
         }
 
-        a.btn {
+        .metrics {
+            background-color: #eef2ff;
+            padding: 15px;
+            border-radius: 6px;
+            margin: 15px 0;
+            font-size: 14px;
+        }
+
+        .btn {
             display: inline-block;
             padding: 8px 16px;
-            background-color: #0056b3;
+            background-color: #1f3c88;
             color: white;
             text-decoration: none;
-            border-radius: 4px;
+            border-radius: 6px;
             margin-top: 10px;
+            transition: 0.3s ease;
+        }
+
+        .btn:hover {
+            background-color: #162c66;
+            transform: translateY(-2px);
         }
     </style>
 </head>
+
 <body>
 
 <nav>
     <a href="index.html">Home</a>
-    <a href="Shubham_Malpani_CV.pdf" target="_blank">Resume</a>
     <a href="projects.html">Projects</a>
     <a href="insights.html">Risk Insights</a>
+    <a href="Shubham_Malpani_CV.pdf" target="_blank">Resume</a>
     <a href="https://www.linkedin.com/in/shubham-malpani97" target="_blank">LinkedIn</a>
 </nav>
 
@@ -73,73 +95,58 @@
 
     <h1>Selected Technical Projects</h1>
 
-    <!-- Project 1 -->
     <div class="project">
-    <h3>End-to-End Credit Risk Modelling (PD, LGD, EAD)</h3>
-    <div class="meta">
-        Dataset: Lending Club 2007–2014 | Logistic Regression Scorecard | Regulatory Framework
+        <h3>End-to-End Credit Risk Modelling (PD, LGD, EAD)</h3>
+        <div class="meta">Lending Club 2007–2014 | Logistic Regression Scorecard | Regulatory Modelling</div>
+
+        <p>
+            Developed a full Expected Loss framework estimating PD, LGD, and EAD using WoE-based feature engineering and
+            interpretable scorecard scaling (300–850 range).
+        </p>
+
+        <div class="metrics">
+            <strong>Out-of-Sample Performance:</strong><br>
+            AUROC: 0.702<br>
+            Gini: 0.404<br>
+            KS Statistic: 0.297
+        </div>
+
+        <p>
+            Validation performed using out-of-sample testing via scikit-learn train-test methodology,
+            supported by Gini, KS, and CAP curve diagnostics to assess discriminatory strength and robustness.
+        </p>
+
+        <a href="https://github.com/ShubhamMalpani97/credit-risk-pd-lgd-ead" class="btn" target="_blank">
+            View Repository
+        </a>
     </div>
 
-    <p>
-        Built a full Expected Loss framework estimating Probability of Default (PD), 
-        Loss Given Default (LGD), and Exposure at Default (EAD). 
-        Implemented Fine & Coarse Classing, Weight of Evidence (WoE), and 
-        Information Value (IV) for feature selection and model interpretability.
-    </p>
-
-    <p>
-        <strong>Model Performance (Out-of-Sample):</strong><br>
-        AUROC: 0.702<br>
-        Gini Coefficient: 0.404<br>
-        KS Statistic: 0.297
-    </p>
-
-    <p>
-        Developed a scorecard scaled between 300–850 for PD interpretation. 
-        Validation performed using out-of-sample testing with scikit-learn train-test split methodology. Model diagnostics included Gini coefficient, KS statistic, and CAP curve analysis to assess discriminatory strength and robustness.
-    </p>
-
-    <a href="https://github.com/ShubhamMalpani97/credit-risk-pd-lgd-ead"
-       class="btn" target="_blank">View Repository</a>
-</div>
-
-    <!-- Project 2 -->
     <div class="project">
         <h3>Binomial Tree Option Pricing Model (Nifty 50)</h3>
-        <div class="meta">Python | Derivatives Modelling | Live Market Data</div>
+        <div class="meta">Python | Risk-Neutral Valuation | American & European Options</div>
 
         <p>
-            Implemented a multi-step Binomial Tree model to price American and European options 
-            using risk-neutral valuation principles.
+            Implemented a multi-step binomial tree framework using backward induction and live market data.
+            Integrated NetworkX for graphical tree visualisation.
         </p>
 
-        <p>
-            Integrated live Nifty 50 data via yfinance and used NetworkX to render dynamic pricing trees, 
-            visualising backward induction and early exercise mechanics.
-        </p>
-
-        <a href="https://github.com/ShubhamMalpani97/binomial-tree-option-pricing-model" 
-           class="btn" target="_blank">View Repository</a>
+        <a href="https://github.com/ShubhamMalpani97/binomial-tree-option-pricing-model" class="btn" target="_blank">
+            View Repository
+        </a>
     </div>
 
-    <!-- Project 3 -->
     <div class="project">
         <h3>Black-Scholes Option Pricing Model (Nifty 50)</h3>
-        <div class="meta">Python | Quantitative Finance | Volatility Estimation</div>
+        <div class="meta">Python | Volatility Estimation | Real-Time Data Integration</div>
 
         <p>
-            Developed a Python-based implementation of the Black-Scholes model using real-time 
-            Nifty 50 data. Calculated annualised volatility from historical returns rather than 
-            relying on static assumptions.
+            Developed a Python implementation of Black-Scholes using dynamically estimated annualised volatility
+            from historical returns instead of fixed assumptions.
         </p>
 
-        <p>
-            Analysed pricing sensitivity to volatility and time-to-expiry, translating continuous 
-            compounding and probability density functions into vectorised Python code.
-        </p>
-
-        <a href="https://github.com/ShubhamMalpani97/black-scholes-nifty50" 
-           class="btn" target="_blank">View Repository</a>
+        <a href="https://github.com/ShubhamMalpani97/black-scholes-nifty50" class="btn" target="_blank">
+            View Repository
+        </a>
     </div>
 
 </div>
