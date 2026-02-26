@@ -21,13 +21,12 @@
     <style>
 
     body {
-        font-family: 'Inter', sans-serif;
-        margin: 0;
-        padding: 0;
-        background: linear-gradient(135deg, #f8f9fb 0%, #eef2ff 100%);
-        color: #1a1a1a;
-        line-height: 1.8;
-        -webkit-font-smoothing: antialiased;
+    font-family: 'Inter', sans-serif;
+    margin: 0;
+    padding: 0;
+    background: #f4f6fb;
+    color: #1a1a1a;
+    line-height: 1.8;
     }
 
     html {
@@ -35,19 +34,18 @@
     }
 
     nav {
-        display: flex;
-        justify-content: center;
-        gap: 35px;
-        padding: 20px 0;
-        backdrop-filter: blur(10px);
-        background: rgba(255,255,255,0.7);
-        position: sticky;
-        top: 0;
-        z-index: 100;
-        border-bottom: 1px solid rgba(0,0,0,0.05);
-        text-transform: uppercase;
-        font-size: 13px;
-        letter-spacing: 1px;
+    display: flex;
+    justify-content: center;
+    gap: 35px;
+    padding: 20px 0;
+    background: white;
+    border-bottom: 1px solid #eee;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    text-transform: uppercase;
+    font-size: 13px;
+    letter-spacing: 1px;
     }
 
     nav a {
@@ -62,19 +60,23 @@
     }
 
     .container {
-        max-width: 1000px;
+        max-width: 1100px;
         margin: auto;
-        padding: 100px 40px;
+        padding: 110px 40px;
     }
 
     .hero {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        gap: 60px;
-        flex-wrap: wrap;
-        margin-bottom: 100px;
-        animation: fadeInUp 1s ease forwards;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 60px;
+    flex-wrap: wrap;
+    margin-bottom: 100px;
+    padding: 70px;
+    border-radius: 20px;
+    background: white;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.06);
+    animation: fadeInUp 1s ease forwards;
     }
 
     h1 {
@@ -100,28 +102,17 @@
     margin-top: 80px;
     }
 
-    .section::before {
-        content: "";
-        display: block;
-        width: 60px;
-        height: 4px;
-        background: #1f3c88;
-        border-radius: 4px;
-        margin-bottom: 25px;
-    }
-
     .card {
-        background: rgba(255,255,255,0.7);
-        backdrop-filter: blur(10px);
-        padding: 40px;
-        border-radius: 14px;
-        box-shadow: 0 10px 40px rgba(0,0,0,0.05);
-        transition: 0.4s ease;
+    background: white;
+    padding: 55px;
+    border-radius: 20px;
+    box-shadow: 0 30px 90px rgba(0,0,0,0.08);
+    transition: 0.3s ease;
     }
 
     .card:hover {
-        transform: translateY(-6px);
-        box-shadow: 0 20px 60px rgba(0,0,0,0.08);
+    transform: translateY(-6px);
+    box-shadow: 0 35px 100px rgba(0,0,0,0.12);
     }
 
     .meta {
