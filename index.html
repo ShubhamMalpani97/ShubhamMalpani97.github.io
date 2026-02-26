@@ -170,6 +170,40 @@
             transform: translateY(0);
         }
     }
+    /* ===== MOBILE RESPONSIVENESS ===== */
+
+    @media (max-width: 900px) {
+
+        .hero {
+            flex-direction: column;
+            text-align: center;
+            padding: 40px;
+            gap: 40px;
+        }
+
+        h1 {
+            font-size: 38px;
+        }
+
+        .container {
+            padding: 40px 20px;
+        }
+
+        img.profile {
+            width: 200px;
+            height: 200px;
+        }
+
+        nav {
+            flex-wrap: wrap;
+            gap: 15px;
+            font-size: 12px;
+        }
+
+        .card {
+            padding: 30px;
+        }
+    }
 
 </style>
 </head>
