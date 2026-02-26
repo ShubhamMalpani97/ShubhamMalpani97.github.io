@@ -96,9 +96,18 @@
         border-radius: 4px;
     }
 
-    .section {
-        margin-bottom: 80px;
-        animation: fadeInUp 1.2s ease forwards;
+   .section {
+    margin-top: 80px;
+    }
+
+    .section::before {
+        content: "";
+        display: block;
+        width: 60px;
+        height: 4px;
+        background: #1f3c88;
+        border-radius: 4px;
+        margin-bottom: 25px;
     }
 
     .card {
