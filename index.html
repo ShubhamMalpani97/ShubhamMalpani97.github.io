@@ -74,6 +74,10 @@
     .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; background: none; border: none; }
     .hamburger span { display: block; width: 24px; height: 1.5px; background: var(--white); transition: 0.3s; }
 
+
+    .hamburger.active span:nth-child(1) { transform: translateY(6.5px) rotate(45deg); }
+    .hamburger.active span:nth-child(2) { opacity: 0; transform: scaleX(0); }
+    .hamburger.active span:nth-child(3) { transform: translateY(-6.5px) rotate(-45deg); }
     /* HERO */
     #hero {
       min-height: 100vh;
@@ -453,7 +457,7 @@
     <li><a href="#contact">Contact</a></li>
     <li><a href="Shubham_Malpani_CV.pdf" target="_blank" class="nav-cta">Resume ↓</a></li>
   </ul>
-  <button class="hamburger" id="hamburger" onclick="toggleMenu()" aria-label="Menu">
+  <button class="hamburger" id="hamburger" aria-label="Toggle menu">
     <span></span><span></span><span></span>
   </button>
 </nav>
@@ -871,7 +875,20 @@
   // Nav scroll
   const nav = document.getElementById('navbar');
   window.addEventListener('scroll', () => nav.classList.toggle('scrolled', window.scrollY > 50));
-  function toggleMenu() { document.getElementById('navLinks').classList.toggle('open'); }
+  // Hamburger menu
+  const hamburger = document.getElementById('hamburger');
+  const navLinks = document.getElementById('navLinks');
+  hamburger.addEventListener('click', () => {
+    navLinks.classList.toggle('open');
+    hamburger.classList.toggle('active');
+  });
+  // Close menu when any nav link is clicked
+  navLinks.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', () => {
+      navLinks.classList.remove('open');
+      hamburger.classList.remove('active');
+    });
+  });
 
   // ── Scroll reveal — progressive enhancement ──
   // Only hide elements after JS confirms IntersectionObserver works
