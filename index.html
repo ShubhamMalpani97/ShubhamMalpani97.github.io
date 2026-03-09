@@ -363,8 +363,9 @@
     footer a { color: var(--gold); text-decoration: none; }
 
     /* REVEAL */
-    .reveal { opacity: 0; transform: translateY(28px); transition: opacity 0.7s ease, transform 0.7s ease; }
-    .reveal.visible { opacity: 1; transform: none; }
+    .reveal { opacity: 1; transform: none; transition: opacity 0.7s ease, transform 0.7s ease; }
+    .reveal.hidden { opacity: 0; transform: translateY(28px); }
+    .reveal.hidden.visible { opacity: 1; transform: none; }
     .reveal-delay-1 { transition-delay: 0.12s; }
     .reveal-delay-2 { transition-delay: 0.24s; }
     .reveal-delay-3 { transition-delay: 0.36s; }
@@ -872,28 +873,36 @@
   window.addEventListener('scroll', () => nav.classList.toggle('scrolled', window.scrollY > 50));
   function toggleMenu() { document.getElementById('navLinks').classList.toggle('open'); }
 
-  // ── Scroll reveal ──
-  const revealEls = document.querySelectorAll('.reveal');
-  const revealObs = new IntersectionObserver(entries => {
-    entries.forEach(e => {
-      if (e.isIntersecting) { e.target.classList.add('visible'); revealObs.unobserve(e.target); }
-    });
-  }, { threshold: 0, rootMargin: '0px 0px -30px 0px' });
-  revealEls.forEach(el => revealObs.observe(el));
-  // Fallback: reveal anything still hidden after 2.5s
-  setTimeout(() => {
-    document.querySelectorAll('.reveal:not(.visible)').forEach(el => el.classList.add('visible'));
-  }, 2500);
+  // ── Scroll reveal — progressive enhancement ──
+  // Only hide elements after JS confirms IntersectionObserver works
+  requestAnimationFrame(() => {
+    const revealEls = document.querySelectorAll('.reveal');
+    revealEls.forEach(el => el.classList.add('hidden'));
+    const obs = new IntersectionObserver(entries => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          e.target.classList.add('visible');
+          e.target.classList.remove('hidden');
+          obs.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0, rootMargin: '0px 0px 0px 0px' });
+    revealEls.forEach(el => obs.observe(el));
+    // Safety net — reveal all after 1.5s no matter what
+    setTimeout(() => {
+      revealEls.forEach(el => { el.classList.remove('hidden'); el.classList.add('visible'); });
+    }, 1500);
+  });
 
-  // ── Stat counters ──
-  let statsRun = false;
+  // ── Stat counters — run immediately on load ──
   function animCounter(el) {
     const target = parseFloat(el.dataset.target);
     const suffix = el.dataset.suffix || '';
     if (isNaN(target)) return;
-    const duration = 1400, start = performance.now();
+    const duration = 1200;
+    const startTime = performance.now();
     function step(now) {
-      const p = Math.min((now - start) / duration, 1);
+      const p = Math.min((now - startTime) / duration, 1);
       const ease = 1 - Math.pow(1 - p, 3);
       const val = target % 1 !== 0 ? (ease * target).toFixed(1) : Math.floor(ease * target);
       el.textContent = val + suffix;
@@ -902,13 +911,17 @@
     }
     requestAnimationFrame(step);
   }
-  function runCounters() {
-    if (statsRun) return; statsRun = true;
-    document.querySelectorAll('.stat-item [data-target]').forEach(animCounter);
-  }
-  const statObs = new IntersectionObserver(entries => {
-    if (entries.some(e => e.isIntersecting)) { runCounters(); statObs.disconnect(); }
-  }, { threshold: 0 });
-  const statsSection = document.getElementById('stats');
-  if (statsSection) statObs.observe(statsSection);
-  setTimeout(runCounters, 1200);
+  // Run on load — no observer dependency
+  window.addEventListener('load', () => {
+    document.querySelectorAll('.stat-num[data-target]').forEach(animCounter);
+  });
+  // Belt-and-braces: also run after 500ms
+  setTimeout(() => {
+    document.querySelectorAll('.stat-num[data-target]').forEach(el => {
+      const target = parseFloat(el.dataset.target);
+      const suffix = el.dataset.suffix || '';
+      if (!isNaN(target) && el.textContent === '0') {
+        el.textContent = (target % 1 !== 0 ? target.toFixed(1) : target) + suffix;
+      }
+    });
+  }, 500);
