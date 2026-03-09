@@ -369,6 +369,53 @@
     .reveal-delay-2 { transition-delay: 0.24s; }
     .reveal-delay-3 { transition-delay: 0.36s; }
 
+
+    /* SKILLS IN DEPTH */
+    #skills-depth { background: var(--navy); }
+    .depth-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1.4rem;
+    }
+    .depth-card {
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      padding: 2rem;
+      background: var(--white-faint);
+      transition: border-color 0.3s, transform 0.3s;
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+    .depth-card:hover { border-color: rgba(196,151,58,0.5); transform: translateY(-3px); }
+    .depth-card-header {
+      display: flex;
+      align-items: flex-start;
+      gap: 1rem;
+    }
+    .depth-icon {
+      font-family: var(--font-mono);
+      font-size: 0.65rem;
+      color: var(--gold);
+      letter-spacing: 0.1em;
+      opacity: 0.7;
+      padding-top: 0.2rem;
+      min-width: 20px;
+    }
+    .depth-card h3 {
+      font-family: var(--font-display);
+      font-size: 1.05rem;
+      font-weight: 600;
+      color: var(--white);
+      line-height: 1.25;
+    }
+    .depth-card p {
+      font-size: 0.84rem;
+      color: var(--white-dim);
+      line-height: 1.8;
+    }
+    .depth-tags { display: flex; flex-wrap: wrap; gap: 0.35rem; margin-top: auto; }
+    @media (max-width: 900px) { .depth-grid { grid-template-columns: 1fr; } }
     /* MOBILE */
     @media (max-width: 900px) {
       nav { padding: 1.1rem 1.5rem; }
@@ -614,7 +661,7 @@
             <span class="pill">WoE / IV</span><span class="pill">Logistic Regression</span>
             <span class="pill">IFRS 9</span><span class="pill">Lending Club Dataset</span>
           </div>
-          <a href="https://github.com/ShubhamMalpani97" target="_blank" class="project-link">View on GitHub →</a>
+          <a href="https://github.com/ShubhamMalpani97/credit-risk-pd-lgd-ead" target="_blank" class="project-link">View on GitHub →</a>
         </div>
         <div class="project-visual">
           <div class="mini-chart">
@@ -665,7 +712,7 @@
           <span class="pill">Python</span><span class="pill">NetworkX</span>
           <span class="pill">Risk-Neutral Valuation</span><span class="pill">American Options</span><span class="pill">European Options</span><span class="pill">Nifty 50</span>
         </div>
-        <a href="https://github.com/ShubhamMalpani97" target="_blank" class="project-link">View on GitHub →</a>
+        <a href="https://github.com/ShubhamMalpani97/binomial-tree-option-pricing-model" target="_blank" class="project-link">View on GitHub →</a>
       </div>
     </div>
 
@@ -681,25 +728,104 @@
           <span class="pill">Python</span><span class="pill">Black-Scholes</span>
           <span class="pill">Volatility Estimation</span><span class="pill">Real-Time Data</span><span class="pill">Nifty 50</span>
         </div>
-        <a href="https://github.com/ShubhamMalpani97" target="_blank" class="project-link">View on GitHub →</a>
+        <a href="https://github.com/ShubhamMalpani97/black-scholes-nifty50" target="_blank" class="project-link">View on GitHub →</a>
       </div>
     </div>
 
-    <!-- Project 4 - In Progress -->
-    <div class="project-card reveal" style="border-color: rgba(196,151,58,0.12);">
-      <div class="project-card-inner" style="grid-template-columns:1fr;">
-        <div class="project-top">
-          <span class="project-num">04</span>
-          <span class="project-featured-badge" style="color:var(--white-dim); border-color:var(--border); background:transparent;">In Progress</span>
-        </div>
-        <h3>Current Research Project</h3>
-        <p style="color: var(--white-dim); font-style: italic;">New quantitative research project currently in development. Check GitHub for updates.</p>
-        <a href="https://github.com/ShubhamMalpani97" target="_blank" class="project-link">Follow on GitHub →</a>
-      </div>
-    </div>
+
 
   </div>
 </section>
+
+
+  <!-- SKILLS IN DEPTH -->
+  <section id="skills-depth">
+    <div class="section-header reveal">
+      <div class="section-label">Technical Depth</div>
+      <h2 class="section-title">Skills <em>in depth</em></h2>
+    </div>
+    <div class="depth-grid">
+
+      <div class="depth-card reveal">
+        <div class="depth-card-header">
+          <div class="depth-icon">01</div>
+          <h3>WoE &amp; Scorecard Development</h3>
+        </div>
+        <p>Weight of Evidence (WoE) transformation converts continuous and categorical variables into interpretable, monotonic bins. I use Information Value (IV) for feature selection and fine/coarse classing to build scorecards scaled to a 300&ndash;850 range &mdash; aligning with regulatory expectations for interpretability.</p>
+        <div class="depth-tags">
+          <span class="pill">WoE Binning</span><span class="pill">Information Value</span>
+          <span class="pill">Fine / Coarse Classing</span><span class="pill">Score Scaling</span>
+          <span class="pill">Odds-to-Score Mapping</span>
+        </div>
+      </div>
+
+      <div class="depth-card reveal reveal-delay-1">
+        <div class="depth-card-header">
+          <div class="depth-icon">02</div>
+          <h3>PD Modelling &amp; Calibration</h3>
+        </div>
+        <p>Probability of Default models built using logistic regression on WoE-transformed features, with calibration to long-run default rates. Validation covers discriminatory power (Gini, AUROC, KS), calibration (Hosmer-Lemeshow), and population stability (PSI) across development and out-of-sample windows.</p>
+        <div class="depth-tags">
+          <span class="pill">Logistic Regression</span><span class="pill">Long-Run Calibration</span>
+          <span class="pill">AUROC / Gini / KS</span><span class="pill">Hosmer-Lemeshow</span>
+          <span class="pill">PSI Monitoring</span>
+        </div>
+      </div>
+
+      <div class="depth-card reveal">
+        <div class="depth-card-header">
+          <div class="depth-icon">03</div>
+          <h3>LGD &amp; EAD Estimation</h3>
+        </div>
+        <p>Loss Given Default modelled using workout LGD methodology, incorporating recovery rates and time value of money discounting. EAD estimation via credit conversion factors (CCF) for off-balance sheet exposures. Both aligned with IFRS 9 and Basel IRB requirements.</p>
+        <div class="depth-tags">
+          <span class="pill">Workout LGD</span><span class="pill">Recovery Rate Analysis</span>
+          <span class="pill">CCF Estimation</span><span class="pill">IFRS 9</span>
+          <span class="pill">Basel IRB</span>
+        </div>
+      </div>
+
+      <div class="depth-card reveal reveal-delay-1">
+        <div class="depth-card-header">
+          <div class="depth-icon">04</div>
+          <h3>Model Validation &amp; Diagnostics</h3>
+        </div>
+        <p>Independent validation of credit risk models covering the full suite of performance diagnostics. I assess discriminatory strength via CAP and ROC curves, calibration via back-testing against observed defaults, and stability via PSI and CSI across time windows and sub-segments.</p>
+        <div class="depth-tags">
+          <span class="pill">CAP Curve</span><span class="pill">ROC Analysis</span>
+          <span class="pill">Back-testing</span><span class="pill">CSI / PSI</span>
+          <span class="pill">Challenger Models</span>
+        </div>
+      </div>
+
+      <div class="depth-card reveal">
+        <div class="depth-card-header">
+          <div class="depth-icon">05</div>
+          <h3>Derivatives Pricing</h3>
+        </div>
+        <p>Option pricing using binomial tree (backward induction, risk-neutral valuation) for American and European options, and Black-Scholes with dynamically estimated annualised volatility from historical returns &mdash; implemented with live Nifty 50 market data and NetworkX visualisation of the pricing lattice.</p>
+        <div class="depth-tags">
+          <span class="pill">Black-Scholes</span><span class="pill">Binomial Tree</span>
+          <span class="pill">Risk-Neutral Valuation</span><span class="pill">Volatility Estimation</span>
+          <span class="pill">NetworkX</span>
+        </div>
+      </div>
+
+      <div class="depth-card reveal reveal-delay-1">
+        <div class="depth-card-header">
+          <div class="depth-icon">06</div>
+          <h3>Python for Quantitative Risk</h3>
+        </div>
+        <p>Production-oriented Python for credit risk: data pipelines in pandas, statistical modelling in statsmodels and scikit-learn, and visualisation with matplotlib. Strong emphasis on clean, documented, reproducible code &mdash; structured for regulatory review and independent validation.</p>
+        <div class="depth-tags">
+          <span class="pill">pandas / numpy</span><span class="pill">scikit-learn</span>
+          <span class="pill">statsmodels</span><span class="pill">matplotlib</span>
+          <span class="pill">Reproducible Code</span>
+        </div>
+      </div>
+
+    </div>
+  </section>
 
 <!-- CONTACT -->
 <section id="contact">
@@ -746,14 +872,21 @@
   window.addEventListener('scroll', () => nav.classList.toggle('scrolled', window.scrollY > 50));
   function toggleMenu() { document.getElementById('navLinks').classList.toggle('open'); }
 
-  // Reveal on scroll
-  const reveals = document.querySelectorAll('.reveal');
+  // ── Scroll reveal ──
+  const revealEls = document.querySelectorAll('.reveal');
   const revealObs = new IntersectionObserver(entries => {
-    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
-  }, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
-  reveals.forEach(el => revealObs.observe(el));
+    entries.forEach(e => {
+      if (e.isIntersecting) { e.target.classList.add('visible'); revealObs.unobserve(e.target); }
+    });
+  }, { threshold: 0, rootMargin: '0px 0px -30px 0px' });
+  revealEls.forEach(el => revealObs.observe(el));
+  // Fallback: reveal anything still hidden after 2.5s
+  setTimeout(() => {
+    document.querySelectorAll('.reveal:not(.visible)').forEach(el => el.classList.add('visible'));
+  }, 2500);
 
-  // Stat counters
+  // ── Stat counters ──
+  let statsRun = false;
   function animCounter(el) {
     const target = parseFloat(el.dataset.target);
     const suffix = el.dataset.suffix || '';
@@ -765,8 +898,17 @@
       const val = target % 1 !== 0 ? (ease * target).toFixed(1) : Math.floor(ease * target);
       el.textContent = val + suffix;
       if (p < 1) requestAnimationFrame(step);
+      else el.textContent = (target % 1 !== 0 ? target.toFixed(1) : target) + suffix;
     }
     requestAnimationFrame(step);
   }
+  function runCounters() {
+    if (statsRun) return; statsRun = true;
+    document.querySelectorAll('.stat-item [data-target]').forEach(animCounter);
+  }
   const statObs = new IntersectionObserver(entries => {
-    entries.forEach(e => {
+    if (entries.some(e => e.isIntersecting)) { runCounters(); statObs.disconnect(); }
+  }, { threshold: 0 });
+  const statsSection = document.getElementById('stats');
+  if (statsSection) statObs.observe(statsSection);
+  setTimeout(runCounters, 1200);
