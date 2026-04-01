@@ -728,6 +728,39 @@
       <div class="project-card-inner" style="grid-template-columns:1fr;">
         <div class="project-top">
           <span class="project-num">02</span>
+          <span class="project-featured-badge" style="background:rgba(196,151,58,0.08); border-color:rgba(196,151,58,0.3); color:var(--gold-pale);">Model Risk Analysis</span>
+        </div>
+        <h3>PD Modelling on German Credit Data &mdash; A Documented Failure Analysis</h3>
+        <p>Built a complete PD modelling pipeline on the German Credit dataset (1,000 borrowers), then systematically documented why the model was always going to fail &mdash; not at the surface level of weak features, but at the level of experimental design. The target variable was simulated using the same features used to model it, creating a self-referential relationship that no amount of tuning could fix. The pipeline is technically correct throughout; the experiment is not.</p>
+        <p style="font-size:0.83rem; color:var(--white-dim); margin-top:0.4rem;">This distinction &mdash; between <strong style="color:var(--white)">pipeline correctness and experimental validity</strong> &mdash; is directly relevant to model validation, SR 11-7 compliance, and internal model risk frameworks.</p>
+        <div class="project-metrics" style="margin-top:0.5rem;">
+          <div class="metric">
+            <div class="metric-val">0.548</div>
+            <div class="metric-label">Test AUROC</div>
+          </div>
+          <div class="metric">
+            <div class="metric-val">0.096</div>
+            <div class="metric-label">Test Gini</div>
+          </div>
+          <div class="metric">
+            <div class="metric-val">21 pts</div>
+            <div class="metric-label">Train-Test Gap</div>
+          </div>
+        </div>
+        <div class="project-meta" style="margin-top:0.8rem;">
+          <span class="pill">Python</span><span class="pill">WoE / IV</span>
+          <span class="pill">Logistic Regression</span><span class="pill">Scorecard Scaling</span>
+          <span class="pill">Bernoulli Simulation</span><span class="pill">Model Risk</span>
+        </div>
+        <a href="https://github.com/ShubhamMalpani97/pd-modelling-failure-analysis" target="_blank" class="project-link" style="margin-top:0.8rem;">View on GitHub &rarr;</a>
+      </div>
+    </div>
+
+    <!-- Project 3 (was 2) -->
+    <div class="project-card reveal">
+      <div class="project-card-inner" style="grid-template-columns:1fr;">
+        <div class="project-top">
+          <span class="project-num">03</span>
         </div>
         <h3>Binomial Tree Option Pricing (Nifty 50)</h3>
         <p>Implemented a <strong style="color:var(--white)">multi-step binomial tree framework</strong> using backward induction and live market data. Priced both American and European options using risk-neutral valuation. Integrated NetworkX for interactive graphical tree visualisation of the pricing lattice.</p>
@@ -743,7 +776,7 @@
     <div class="project-card reveal">
       <div class="project-card-inner" style="grid-template-columns:1fr;">
         <div class="project-top">
-          <span class="project-num">03</span>
+          <span class="project-num">04</span>
         </div>
         <h3>Black-Scholes Option Pricing (Nifty 50)</h3>
         <p>Developed a Python implementation of the <strong style="color:var(--white)">Black-Scholes model</strong> using dynamically estimated annualised volatility derived from historical returns — moving away from fixed volatility assumptions toward a data-driven approach with real-time market data integration.</p>
