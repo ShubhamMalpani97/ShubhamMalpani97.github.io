@@ -4,20 +4,20 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Shubham Malpani | Quantitative Risk & Credit Analytics</title>
-  <meta name="description" content="Quantitative Credit Risk researcher specialising in IFRS 9, Basel frameworks, PD/LGD/EAD modelling. Independent researcher based in India, open to relocation worldwide." />
+  <meta name="description" content="Quantitative Credit Risk researcher specialising in IFRS 9, Basel frameworks, PD/LGD/EAD modelling. Independent researcher based in India, open to relocation." />
  />
   <!-- Open Graph / LinkedIn / WhatsApp / Twitter preview -->
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://shubhammalpani97.github.io/" />
   <meta property="og:title" content="Shubham Malpani | Quantitative Risk & Credit Analytics" />
-  <meta property="og:description" content="Quantitative Credit Risk professional specialising in PD/LGD/EAD modelling, IFRS 9, and Basel III/IV. CFA Level II. Open to relocation worldwide." />
+  <meta property="og:description" content="Quantitative Credit Risk professional specialising in PD/LGD/EAD modelling, IFRS 9, and Basel III/IV. CFA Level II. Open to relocation." />
   <meta property="og:image" content="https://shubhammalpani97.github.io/profile.png" />
   <meta property="og:image:width" content="1200" />
   <meta property="og:image:height" content="630" />
   <meta property="og:locale" content="en_GB" />
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Shubham Malpani | Quantitative Risk & Credit Analytics" />
-  <meta name="twitter:description" content="Quantitative Credit Risk professional specialising in PD/LGD/EAD modelling, IFRS 9, and Basel III/IV. CFA Level II. Open to relocation worldwide." />
+  <meta name="twitter:description" content="Quantitative Credit Risk professional specialising in PD/LGD/EAD modelling, IFRS 9, and Basel III/IV. CFA Level II. Open to relocation." />
   <meta name="twitter:image" content="https://shubhammalpani97.github.io/profile.png" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -503,7 +503,7 @@
     <p class="hero-bio">
       Credit Risk professional with 2+ years of industry experience, specialising in 
       PD/LGD/EAD model development and validation, IFRS 9, and Basel III/IV — 
-      open to credit risk analytics roles worldwide.
+      open to credit risk analytics roles.
     </p>
     <div class="hero-actions">
       <a href="#projects" class="btn-primary">
@@ -570,7 +570,7 @@
         In independent research, I built an end-to-end PD/LGD/EAD pipeline on a 460,000+ record dataset — covering WoE/IV feature engineering, logistic regression scorecard development, and full out-of-sample validation. I have also built derivatives pricing models (Black-Scholes and binomial tree), though my primary focus remains credit risk.
       </p>
       <p>
-        I'm open to <strong>Quantitative Risk Analytics roles worldwide</strong>, with a strong interest in leading financial institutions across India, Europe, and the UK.
+        I'm open to <strong>Quantitative Risk Analytics roles</strong>, with a strong interest in leading financial institutions across Europe.
       </p>
       <div style="margin-top: 1.8rem;">
         <a href="#contact" class="btn-primary" style="font-size:0.79rem; padding: 0.7rem 1.5rem;">Get in Touch</a>
@@ -724,10 +724,48 @@
     </div>
 
     <!-- Project 2 -->
+    <!-- Project 2 -->
     <div class="project-card reveal">
       <div class="project-card-inner" style="grid-template-columns:1fr;">
         <div class="project-top">
           <span class="project-num">02</span>
+          <span class="project-featured-badge">Production-Style Pipeline</span>
+        </div>
+        <h3>Home Credit Default Risk &mdash; Full Expected Loss Pipeline</h3>
+        <p>Production-style end-to-end Expected Loss framework across 307,511 loan applications and 5 relational tables. Built a WoE/IV pipeline from scratch across 91 candidate features (43 selected), a two-stage LGD model separating zero-loss from positive-loss borrowers, and a CCF-based EAD model. IFRS 9 staging applied across the full portfolio. Basel III validation confirms model Gini of 0.481 exceeds the 0.35 IRB minimum threshold.</p>
+        <div class="project-metrics" style="margin-top:0.8rem;">
+          <div class="metric">
+            <div class="metric-val">0.741</div>
+            <div class="metric-label">Test AUROC</div>
+          </div>
+          <div class="metric">
+            <div class="metric-val">0.481</div>
+            <div class="metric-label">Test Gini</div>
+          </div>
+          <div class="metric">
+            <div class="metric-val">0.364</div>
+            <div class="metric-label">KS Statistic</div>
+          </div>
+          <div class="metric">
+            <div class="metric-val">0.77%</div>
+            <div class="metric-label">Portfolio EL Rate</div>
+          </div>
+        </div>
+        <p style="font-size:0.82rem; color:var(--white-dim); margin-top:0.8rem;">No overfitting: Gini gap of &minus;0.005 &middot; Mean LGD 43.1% &middot; Total ECL Provision: 133,872,222 &middot; IFRS 9 &mdash; Stage 1: 213 &middot; Stage 2: 58,239 &middot; Stage 3: 3,051</p>
+        <div class="project-meta" style="margin-top:0.8rem;">
+          <span class="pill">Python</span><span class="pill">WoE / IV</span>
+          <span class="pill">Two-Stage LGD</span><span class="pill">CCF / EAD</span>
+          <span class="pill">IFRS 9 Staging</span><span class="pill">Basel III IRB</span>
+          <span class="pill">307k Records</span><span class="pill">5 Relational Tables</span>
+        </div>
+        <a href="https://github.com/ShubhamMalpani97/home-credit-expected-loss" target="_blank" class="project-link" style="margin-top:0.8rem;">View on GitHub &rarr;</a>
+      </div>
+    </div>
+
+    <div class="project-card reveal">
+      <div class="project-card-inner" style="grid-template-columns:1fr;">
+        <div class="project-top">
+          <span class="project-num">03</span>
           <span class="project-featured-badge" style="background:rgba(196,151,58,0.08); border-color:rgba(196,151,58,0.3); color:var(--gold-pale);">Model Risk Analysis</span>
         </div>
         <h3>PD Modelling on German Credit Data &mdash; A Documented Failure Analysis</h3>
@@ -760,7 +798,7 @@
     <div class="project-card reveal">
       <div class="project-card-inner" style="grid-template-columns:1fr;">
         <div class="project-top">
-          <span class="project-num">03</span>
+          <span class="project-num">04</span>
         </div>
         <h3>Binomial Tree Option Pricing (Nifty 50)</h3>
         <p>Implemented a <strong style="color:var(--white)">multi-step binomial tree framework</strong> using backward induction and live market data. Priced both American and European options using risk-neutral valuation. Integrated NetworkX for interactive graphical tree visualisation of the pricing lattice.</p>
@@ -776,7 +814,7 @@
     <div class="project-card reveal">
       <div class="project-card-inner" style="grid-template-columns:1fr;">
         <div class="project-top">
-          <span class="project-num">04</span>
+          <span class="project-num">05</span>
         </div>
         <h3>Black-Scholes Option Pricing (Nifty 50)</h3>
         <p>Developed a Python implementation of the <strong style="color:var(--white)">Black-Scholes model</strong> using dynamically estimated annualised volatility derived from historical returns — moving away from fixed volatility assumptions toward a data-driven approach with real-time market data integration.</p>
@@ -889,12 +927,12 @@
     <div class="section-label reveal" style="justify-content:center;">Contact</div>
     <h2 class="section-title reveal" style="margin-bottom:1.1rem;">Let's <em>connect</em></h2>
     <p class="reveal">
-      I'm actively exploring Quantitative Risk Analytics roles worldwide. 
+      I'm actively exploring Quantitative Risk Analytics roles. 
       Whether you're a recruiter, hiring manager, or fellow quant — I'd love to hear from you.
     </p>
     <div class="availability-badge reveal">
       <div class="availability-dot"></div>
-      Available for opportunities &mdash; open to relocation
+      Available for opportunities &mdash; open to relocation worldwide
     </div>
     <div class="contact-links reveal">
       <a href="javascript:void(0)" id="email-link" onclick="var e=['shubham','.','malpani97','@','gmail','.','com'].join('');window.location.href='mailto:'+e;" class="contact-item">
