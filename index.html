@@ -4,46 +4,60 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Shubham Malpani | Quantitative Risk & Credit Analytics</title>
-  <meta name="description" content="Quantitative Credit Risk researcher specialising in IFRS 9, Basel frameworks, PD/LGD/EAD modelling. Independent researcher based in India, open to relocation." />
- />
+  <meta name="description" content="Quantitative Credit Risk researcher specialising in IFRS 9, Basel frameworks, PD/LGD/EAD modelling. Independent researcher based in India, open to relocation worldwide." />
   <!-- Open Graph / LinkedIn / WhatsApp / Twitter preview -->
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://shubhammalpani97.github.io/" />
   <meta property="og:title" content="Shubham Malpani | Quantitative Risk & Credit Analytics" />
-  <meta property="og:description" content="Quantitative Credit Risk professional specialising in PD/LGD/EAD modelling, IFRS 9, and Basel III/IV. CFA Level II. Open to relocation." />
+  <meta property="og:description" content="Quantitative Credit Risk professional specialising in PD/LGD/EAD modelling, IFRS 9, and Basel III/IV. CFA Level II. Open to relocation worldwide." />
   <meta property="og:image" content="https://shubhammalpani97.github.io/profile.png" />
   <meta property="og:image:width" content="1200" />
   <meta property="og:image:height" content="630" />
   <meta property="og:locale" content="en_GB" />
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Shubham Malpani | Quantitative Risk & Credit Analytics" />
-  <meta name="twitter:description" content="Quantitative Credit Risk professional specialising in PD/LGD/EAD modelling, IFRS 9, and Basel III/IV. CFA Level II. Open to relocation." />
+  <meta name="twitter:description" content="Quantitative Credit Risk professional specialising in PD/LGD/EAD modelling, IFRS 9, and Basel III/IV. CFA Level II. Open to relocation worldwide." />
   <meta name="twitter:image" content="https://shubhammalpani97.github.io/profile.png" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Inter:wght@300;400;500;600&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet" />
   <style>
     :root {
-      --cream:       #FAF7F2;
-      --cream-2:     #F3EDE3;
-      --cream-3:     #EDE4D6;
-      --sand:        #E2D5C0;
-      --sand-dark:   #C8B89A;
-      --bronze:      #8B5E34;
-      --bronze-light:#B07D4A;
-      --bronze-pale: #F0E4D4;
-      --charcoal:    #1C1A18;
-      --charcoal-2:  #3A3630;
-      --charcoal-dim:rgba(28,26,24,0.55);
-      --charcoal-faint:rgba(28,26,24,0.07);
-      --white:       #FFFFFF;
-      --border:      rgba(139,94,52,0.15);
-      --shadow-sm:   0 2px 12px rgba(28,26,24,0.07);
-      --shadow-md:   0 6px 30px rgba(28,26,24,0.1);
-      --shadow-lg:   0 16px 50px rgba(28,26,24,0.12);
-      --font-display:'Playfair Display', Georgia, serif;
-      --font-body:   'Inter', sans-serif;
-      --font-mono:   'DM Mono', monospace;
+      /* Light sections */
+      --cream:        #FAF7F2;
+      --cream-2:      #F3EDE3;
+      --cream-3:      #EDE4D6;
+      --sand:         #E2D5C0;
+      --sand-dark:    #C8B89A;
+      /* Dark hero */
+      --dark:         #161210;
+      --dark-2:       #1E1815;
+      --dark-3:       #26201C;
+      --dark-border:  rgba(200,184,154,0.15);
+      /* Accent */
+      --bronze:       #B87333;
+      --bronze-light: #D4914A;
+      --bronze-pale:  #F0E4D4;
+      --bronze-glow:  rgba(184,115,51,0.18);
+      /* Text */
+      --charcoal:     #1C1A18;
+      --charcoal-2:   #3A3630;
+      --charcoal-dim: rgba(28,26,24,0.58);
+      --cream-text:   #FAF7F2;
+      --cream-dim:    rgba(250,247,242,0.62);
+      /* Highlights for key terms */
+      --hl-bg:        rgba(184,115,51,0.12);
+      --hl-border:    rgba(184,115,51,0.35);
+      /* Borders & shadows */
+      --border:       rgba(184,115,51,0.18);
+      --shadow-sm:    0 2px 12px rgba(28,26,24,0.07);
+      --shadow-md:    0 8px 32px rgba(28,26,24,0.11);
+      --shadow-lg:    0 20px 60px rgba(28,26,24,0.14);
+      --shadow-bronze:0 8px 32px rgba(184,115,51,0.2);
+      /* Fonts */
+      --font-display: 'Playfair Display', Georgia, serif;
+      --font-body:    'Inter', sans-serif;
+      --font-mono:    'DM Mono', monospace;
     }
 
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -58,12 +72,41 @@
       overflow-x: hidden;
     }
 
-    /* ── GRAIN TEXTURE ── */
+    /* Grain on light sections */
     body::before {
       content: '';
       position: fixed; inset: 0;
-      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 512 512' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.035'/%3E%3C/svg%3E");
-      pointer-events: none; z-index: 0; opacity: 1;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 512 512' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.03'/%3E%3C/svg%3E");
+      pointer-events: none; z-index: 0;
+    }
+
+    /* ── KEY TERM HIGHLIGHT — Option C+A ── */
+    /* C: weight + colour for body text */
+    .key {
+      font-weight: 600;
+      color: var(--bronze);
+    }
+    /* Dark section version */
+    .key-dark {
+      font-weight: 600;
+      color: var(--bronze-light);
+    }
+    /* A: warm underline for project titles / section emphasis */
+    .key-ul {
+      font-weight: 600;
+      color: var(--bronze);
+      text-decoration: underline;
+      text-decoration-color: rgba(184,115,51,0.5);
+      text-underline-offset: 3px;
+      text-decoration-thickness: 1.5px;
+    }
+    .key-ul-dark {
+      font-weight: 600;
+      color: var(--bronze-light);
+      text-decoration: underline;
+      text-decoration-color: rgba(212,145,74,0.5);
+      text-underline-offset: 3px;
+      text-decoration-thickness: 1.5px;
     }
 
     /* ── NAV ── */
@@ -71,114 +114,147 @@
       position: fixed; top: 0; left: 0; right: 0; z-index: 100;
       display: flex; align-items: center; justify-content: space-between;
       padding: 1.3rem 4rem;
-      background: rgba(250,247,242,0.92);
-      backdrop-filter: blur(12px);
-      -webkit-backdrop-filter: blur(12px);
+      transition: background 0.4s, border-color 0.4s, box-shadow 0.4s;
+      background: transparent;
       border-bottom: 1px solid transparent;
-      transition: border-color 0.3s, box-shadow 0.3s;
     }
-    nav.scrolled { border-bottom-color: var(--border); box-shadow: var(--shadow-sm); }
+    nav.scrolled {
+      background: rgba(22,18,16,0.95);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border-bottom-color: var(--dark-border);
+      box-shadow: 0 4px 30px rgba(0,0,0,0.3);
+    }
+    nav.light-nav {
+      background: rgba(250,247,242,0.94);
+      backdrop-filter: blur(12px);
+      border-bottom-color: var(--border);
+      box-shadow: var(--shadow-sm);
+    }
     .nav-logo {
       font-family: var(--font-display); font-size: 1.1rem; font-weight: 700;
-      color: var(--bronze); text-decoration: none; letter-spacing: 0.01em;
+      color: var(--cream-text); text-decoration: none; letter-spacing: 0.01em;
+      transition: color 0.3s;
     }
+    nav.light-nav .nav-logo { color: var(--bronze); }
     .nav-links { display: flex; gap: 2.2rem; list-style: none; align-items: center; }
     .nav-links a {
-      color: var(--charcoal-dim); text-decoration: none; font-size: 0.8rem;
+      color: var(--cream-dim); text-decoration: none; font-size: 0.8rem;
       font-weight: 500; letter-spacing: 0.09em; text-transform: uppercase;
       transition: color 0.2s;
     }
-    .nav-links a:hover { color: var(--bronze); }
+    nav.light-nav .nav-links a { color: var(--charcoal-dim); }
+    .nav-links a:hover { color: var(--bronze-light) !important; }
     .nav-cta {
       background: transparent !important;
-      border: 1.5px solid var(--bronze) !important;
-      color: var(--bronze) !important;
+      border: 1.5px solid rgba(200,184,154,0.5) !important;
+      color: var(--cream-text) !important;
       padding: 0.4rem 1.1rem !important; border-radius: 3px;
-      transition: background 0.2s, color 0.2s !important;
+      transition: all 0.2s !important;
     }
-    .nav-cta:hover { background: var(--bronze) !important; color: var(--white) !important; }
+    nav.light-nav .nav-cta { border-color: var(--bronze) !important; color: var(--bronze) !important; }
+    .nav-cta:hover { background: var(--bronze) !important; color: var(--cream-text) !important; border-color: var(--bronze) !important; }
     .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; background: none; border: none; }
-    .hamburger span { display: block; width: 22px; height: 1.5px; background: var(--charcoal); transition: 0.3s; }
+    .hamburger span { display: block; width: 22px; height: 1.5px; background: var(--cream-text); transition: 0.3s; }
+    nav.light-nav .hamburger span { background: var(--charcoal); }
     .hamburger.active span:nth-child(1) { transform: translateY(6.5px) rotate(45deg); }
-    .hamburger.active span:nth-child(2) { opacity: 0; transform: scaleX(0); }
+    .hamburger.active span:nth-child(2) { opacity: 0; }
     .hamburger.active span:nth-child(3) { transform: translateY(-6.5px) rotate(-45deg); }
 
-    /* ── HERO ── */
+    /* ── HERO — DARK ── */
     #hero {
       min-height: 100vh;
       display: grid; grid-template-columns: 1fr 1fr;
       align-items: center; padding: 8rem 4rem 4rem;
       position: relative; overflow: hidden;
-      background: linear-gradient(135deg, var(--cream) 0%, var(--cream-2) 60%, var(--cream-3) 100%);
+      background: var(--dark);
     }
+    /* Animated gradient mesh */
     .hero-grid-bg {
       position: absolute; inset: 0;
+      background:
+        radial-gradient(ellipse 60% 80% at 20% 50%, rgba(184,115,51,0.12) 0%, transparent 60%),
+        radial-gradient(ellipse 50% 60% at 80% 20%, rgba(184,115,51,0.07) 0%, transparent 50%),
+        radial-gradient(ellipse 40% 40% at 60% 80%, rgba(184,115,51,0.05) 0%, transparent 50%);
+      animation: meshShift 10s ease-in-out infinite alternate;
+    }
+    @keyframes meshShift {
+      0%   { opacity: 0.8; transform: scale(1); }
+      100% { opacity: 1; transform: scale(1.05); }
+    }
+    /* Fine grid lines */
+    .hero-grid-lines {
+      position: absolute; inset: 0;
       background-image:
-        linear-gradient(rgba(139,94,52,0.06) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(139,94,52,0.06) 1px, transparent 1px);
-      background-size: 55px 55px;
-      mask-image: radial-gradient(ellipse 70% 70% at 50% 50%, black 20%, transparent 100%);
+        linear-gradient(rgba(200,184,154,0.04) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(200,184,154,0.04) 1px, transparent 1px);
+      background-size: 60px 60px;
     }
-    .hero-glow {
-      position: absolute; width: 600px; height: 600px;
-      background: radial-gradient(ellipse, rgba(176,125,74,0.1) 0%, transparent 65%);
-      top: -100px; right: -100px; pointer-events: none;
-    }
+
     .hero-text { position: relative; z-index: 1; }
     .hero-eyebrow {
-      font-family: var(--font-mono); font-size: 0.72rem; color: var(--bronze);
-      letter-spacing: 0.2em; text-transform: uppercase; margin-bottom: 1.2rem;
+      font-family: var(--font-mono); font-size: 0.72rem; color: var(--bronze-light);
+      letter-spacing: 0.22em; text-transform: uppercase; margin-bottom: 1.2rem;
       display: flex; align-items: center; gap: 0.8rem;
       animation: fadeUp 0.8s ease both;
     }
-    .hero-eyebrow::before { content: ''; display: block; width: 36px; height: 1.5px; background: var(--bronze); }
+    .hero-eyebrow::before { content: ''; display: block; width: 36px; height: 1.5px; background: var(--bronze); animation: growLine 0.8s 0.2s ease both; transform-origin: left; }
+    @keyframes growLine { from { transform: scaleX(0); } to { transform: scaleX(1); } }
+
     .hero-name {
-      font-family: var(--font-display); font-size: clamp(2.8rem, 5vw, 5rem);
-      font-weight: 700; line-height: 1.05; margin-bottom: 0.9rem; color: var(--charcoal);
+      font-family: var(--font-display); font-size: clamp(3rem, 5.5vw, 5.5rem);
+      font-weight: 700; line-height: 1.04; margin-bottom: 0.9rem; color: var(--cream-text);
       animation: fadeUp 0.8s 0.1s ease both;
+      letter-spacing: -0.01em;
     }
-    .hero-name span { color: var(--bronze); }
+    .hero-name span { color: var(--bronze-light); }
+
     .hero-role {
-      font-size: 0.92rem; color: var(--charcoal-dim); margin-bottom: 1rem;
-      font-weight: 500; letter-spacing: 0.01em;
+      font-size: 0.88rem; color: var(--cream-dim); margin-bottom: 1rem;
+      font-weight: 400; letter-spacing: 0.01em;
       animation: fadeUp 0.8s 0.2s ease both;
     }
+    .hero-role strong { color: var(--cream-text); font-weight: 500; }
+
     .hero-tags {
       display: flex; flex-wrap: wrap; gap: 0.4rem; margin-bottom: 1.8rem;
       animation: fadeUp 0.8s 0.3s ease both;
     }
     .tag {
       font-family: var(--font-mono); font-size: 0.67rem; letter-spacing: 0.06em;
-      padding: 0.28rem 0.65rem; border: 1px solid var(--border);
-      color: var(--bronze); border-radius: 3px;
-      background: var(--bronze-pale); font-weight: 500;
+      padding: 0.28rem 0.65rem; border: 1px solid var(--dark-border);
+      color: var(--bronze-light); border-radius: 3px;
+      background: rgba(184,115,51,0.1); font-weight: 500;
+      transition: background 0.2s, border-color 0.2s;
     }
+    .tag:hover { background: rgba(184,115,51,0.2); border-color: rgba(184,115,51,0.4); }
+
     .hero-bio {
-      font-size: 0.95rem; color: var(--charcoal-dim); max-width: 480px;
-      line-height: 1.85; margin-bottom: 2rem;
+      font-size: 0.95rem; color: var(--cream-dim); max-width: 480px;
+      line-height: 1.88; margin-bottom: 2rem;
       animation: fadeUp 0.8s 0.4s ease both;
     }
+
     .hero-actions { display: flex; gap: 1rem; flex-wrap: wrap; animation: fadeUp 0.8s 0.5s ease both; }
     .btn-primary {
       display: inline-flex; align-items: center; gap: 0.5rem;
-      background: var(--bronze); color: var(--white); padding: 0.85rem 2rem;
+      background: var(--bronze); color: var(--cream-text); padding: 0.85rem 2rem;
       font-family: var(--font-body); font-weight: 600; font-size: 0.82rem;
       letter-spacing: 0.07em; text-transform: uppercase; text-decoration: none;
       border-radius: 3px; transition: background 0.2s, transform 0.2s;
-      box-shadow: 0 4px 16px rgba(139,94,52,0.25);
+      box-shadow: var(--shadow-bronze);
     }
     .btn-primary:hover { background: var(--bronze-light); transform: translateY(-2px); }
     .btn-secondary {
       display: inline-flex; align-items: center; gap: 0.5rem;
-      border: 1.5px solid var(--sand-dark); color: var(--charcoal-dim); padding: 0.85rem 2rem;
+      border: 1.5px solid rgba(200,184,154,0.35); color: var(--cream-dim); padding: 0.85rem 2rem;
       font-family: var(--font-body); font-weight: 500; font-size: 0.82rem;
       letter-spacing: 0.07em; text-transform: uppercase; text-decoration: none;
-      border-radius: 3px; transition: border-color 0.2s, color 0.2s, transform 0.2s;
-      background: transparent;
+      border-radius: 3px; transition: all 0.2s; background: transparent;
     }
-    .btn-secondary:hover { border-color: var(--bronze); color: var(--bronze); transform: translateY(-2px); }
+    .btn-secondary:hover { border-color: var(--bronze); color: var(--cream-text); transform: translateY(-2px); }
 
-    /* ── HERO PHOTO ── */
+    /* Hero photo */
     .hero-visual {
       position: relative; z-index: 1;
       display: flex; justify-content: center; align-items: center;
@@ -187,28 +263,29 @@
     .hero-photo-wrap { position: relative; width: 340px; height: 420px; }
     .hero-photo-frame {
       position: absolute; inset: 0; border-radius: 6px; overflow: hidden;
-      background: var(--cream-3); box-shadow: var(--shadow-lg);
+      background: var(--dark-3); box-shadow: 0 30px 80px rgba(0,0,0,0.5);
+      border: 1px solid var(--dark-border);
     }
     .hero-photo-frame img {
       width: 100%; height: 100%; object-fit: cover; object-position: top center;
-      display: block; filter: contrast(1.02) brightness(1.01);
+      display: block; filter: contrast(1.04) brightness(0.96);
     }
     .hero-photo-accent {
       position: absolute; top: -12px; right: -12px;
       width: 100%; height: 100%;
-      border: 1.5px solid var(--sand-dark); border-radius: 6px; pointer-events: none;
+      border: 1.5px solid rgba(184,115,51,0.35); border-radius: 6px; pointer-events: none;
     }
     .hero-photo-badge {
       position: absolute; bottom: -18px; left: -18px;
-      background: var(--bronze); color: var(--white); padding: 0.55rem 0.9rem;
+      background: var(--bronze); color: var(--cream-text); padding: 0.55rem 0.9rem;
       font-family: var(--font-mono); font-size: 0.68rem; font-weight: 500;
       letter-spacing: 0.08em; border-radius: 3px;
-      box-shadow: 0 4px 14px rgba(139,94,52,0.3);
+      box-shadow: 0 4px 18px rgba(184,115,51,0.35);
     }
     .hero-scroll {
       position: absolute; bottom: 2rem; left: 50%; transform: translateX(-50%);
       display: flex; flex-direction: column; align-items: center; gap: 0.5rem;
-      color: var(--charcoal-dim); font-family: var(--font-mono); font-size: 0.62rem;
+      color: var(--cream-dim); font-family: var(--font-mono); font-size: 0.62rem;
       letter-spacing: 0.15em; text-transform: uppercase;
     }
     .scroll-line {
@@ -217,19 +294,19 @@
       animation: scrollDown 2s ease-in-out infinite;
     }
     @keyframes scrollDown {
-      0% { transform: scaleY(0); transform-origin: top; }
-      50% { transform: scaleY(1); transform-origin: top; }
-      51% { transform: scaleY(1); transform-origin: bottom; }
+      0%   { transform: scaleY(0); transform-origin: top; }
+      50%  { transform: scaleY(1); transform-origin: top; }
+      51%  { transform: scaleY(1); transform-origin: bottom; }
       100% { transform: scaleY(0); transform-origin: bottom; }
     }
     @keyframes fadeUp { from { opacity:0; transform: translateY(20px); } to { opacity:1; transform: none; } }
     @keyframes fadeIn  { from { opacity:0; } to { opacity:1; } }
 
-    /* ── STATS ── */
+    /* ── STATS — WHITE BAR ── */
     #stats {
       border-top: 1px solid var(--border); border-bottom: 1px solid var(--border);
       padding: 3rem 4rem; display: grid; grid-template-columns: repeat(4, 1fr);
-      background: var(--white); box-shadow: var(--shadow-sm);
+      background: var(--cream-text); box-shadow: var(--shadow-sm);
     }
     .stat-item { text-align: center; padding: 0.8rem; position: relative; }
     .stat-item:not(:last-child)::after {
@@ -242,7 +319,7 @@
     }
     .stat-label { font-size: 0.73rem; color: var(--charcoal-dim); letter-spacing: 0.09em; text-transform: uppercase; font-weight: 500; }
 
-    /* ── SECTIONS ── */
+    /* ── LIGHT SECTIONS ── */
     section { padding: 6rem 4rem; position: relative; }
     .section-header { margin-bottom: 3.5rem; }
     .section-label {
@@ -271,7 +348,7 @@
     .about-cards { display: flex; flex-direction: column; gap: 1rem; }
     .detail-block {
       border: 1px solid var(--border); border-radius: 6px;
-      padding: 1.3rem 1.5rem; background: var(--white);
+      padding: 1.3rem 1.5rem; background: var(--cream-text);
       box-shadow: var(--shadow-sm); transition: box-shadow 0.25s, border-color 0.25s;
     }
     .detail-block:hover { box-shadow: var(--shadow-md); border-color: var(--sand-dark); }
@@ -287,7 +364,7 @@
     .skills-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.4rem; }
     .skill-card {
       border: 1px solid var(--border); border-radius: 6px; padding: 1.8rem;
-      background: var(--white); box-shadow: var(--shadow-sm);
+      background: var(--cream-text); box-shadow: var(--shadow-sm);
       transition: box-shadow 0.3s, transform 0.3s, border-color 0.3s;
       position: relative; overflow: hidden;
     }
@@ -304,7 +381,7 @@
     .skill-pills { display: flex; flex-wrap: wrap; gap: 0.35rem; }
     .pill {
       font-family: var(--font-mono); font-size: 0.63rem; padding: 0.22rem 0.5rem;
-      background: var(--bronze-pale); border: 1px solid rgba(139,94,52,0.2);
+      background: var(--bronze-pale); border: 1px solid rgba(184,115,51,0.22);
       color: var(--bronze); border-radius: 3px; letter-spacing: 0.04em; font-weight: 500;
     }
 
@@ -313,21 +390,19 @@
     .projects-list { display: flex; flex-direction: column; gap: 1.4rem; }
     .project-card {
       border: 1px solid var(--border); border-radius: 8px;
-      background: var(--white); box-shadow: var(--shadow-sm);
+      background: var(--cream-text); box-shadow: var(--shadow-sm);
       transition: box-shadow 0.3s, transform 0.3s;
       overflow: hidden;
     }
     .project-card:hover { box-shadow: var(--shadow-md); transform: translateY(-3px); }
     .project-card-inner { padding: 2rem 2.2rem; display: grid; gap: 1rem; }
-    .project-card.featured .project-card-inner {
-      grid-template-columns: 1.4fr 1fr; align-items: start; gap: 3rem;
-    }
+    .project-card.featured .project-card-inner { grid-template-columns: 1.4fr 1fr; align-items: start; gap: 3rem; }
     .project-top { display: flex; align-items: flex-start; justify-content: space-between; gap: 1rem; flex-wrap: wrap; }
     .project-num { font-family: var(--font-mono); font-size: 0.63rem; color: var(--bronze); letter-spacing: 0.15em; opacity: 0.7; }
     .project-featured-badge {
       font-family: var(--font-mono); font-size: 0.63rem; letter-spacing: 0.08em;
       padding: 0.22rem 0.55rem; background: var(--bronze-pale);
-      border: 1px solid rgba(139,94,52,0.25); color: var(--bronze); border-radius: 3px;
+      border: 1px solid rgba(184,115,51,0.28); color: var(--bronze); border-radius: 3px;
     }
     .project-card h3 { font-family: var(--font-display); font-size: 1.25rem; font-weight: 600; color: var(--charcoal); line-height: 1.25; }
     .project-card p { font-size: 0.86rem; color: var(--charcoal-dim); line-height: 1.8; }
@@ -352,18 +427,13 @@
     .mini-chart-label { font-family: var(--font-mono); font-size: 0.62rem; color: var(--bronze); letter-spacing: 0.1em; margin-bottom: 0.8rem; opacity: 0.85; }
     .bars { display: flex; align-items: flex-end; gap: 5px; height: 68px; }
     .bar { flex: 1; background: var(--bronze-pale); border-top: 2px solid var(--bronze); }
-    .roc-display {
-      border: 1px solid var(--border); border-radius: 5px; padding: 1.2rem;
-      display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 0.8rem; text-align: center;
-      background: var(--cream);
-    }
 
     /* ── SKILLS IN DEPTH ── */
     #skills-depth { background: var(--cream); }
     .depth-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.4rem; }
     .depth-card {
       border: 1px solid var(--border); border-radius: 6px; padding: 2rem;
-      background: var(--white); box-shadow: var(--shadow-sm);
+      background: var(--cream-text); box-shadow: var(--shadow-sm);
       transition: box-shadow 0.3s, transform 0.3s;
       display: flex; flex-direction: column; gap: 1rem;
     }
@@ -375,38 +445,40 @@
     .depth-tags { display: flex; flex-wrap: wrap; gap: 0.35rem; margin-top: auto; }
 
     /* ── CONTACT ── */
-    #contact { background: var(--cream-2); }
+    #contact { background: var(--dark); }
     .contact-inner { max-width: 660px; margin: 0 auto; text-align: center; }
-    .contact-inner .section-label { justify-content: center; }
+    .contact-inner .section-label { justify-content: center; color: var(--bronze-light); }
     .contact-inner .section-label::after { display: none; }
-    .contact-inner > p { color: var(--charcoal-dim); font-size: 0.95rem; margin-bottom: 2.5rem; }
+    .contact-inner .section-title { color: var(--cream-text); }
+    .contact-inner .section-title em { color: var(--bronze-light); }
+    .contact-inner > p { color: var(--cream-dim); font-size: 0.95rem; margin-bottom: 2.5rem; }
     .availability-badge {
       display: inline-flex; align-items: center; gap: 0.6rem;
-      background: var(--bronze-pale); border: 1px solid rgba(139,94,52,0.25);
+      background: rgba(184,115,51,0.12); border: 1px solid rgba(184,115,51,0.3);
       border-radius: 50px; padding: 0.5rem 1.2rem; font-size: 0.75rem;
-      color: var(--bronze); font-family: var(--font-mono); letter-spacing: 0.05em;
+      color: var(--bronze-light); font-family: var(--font-mono); letter-spacing: 0.05em;
       margin-bottom: 2.5rem;
     }
     .availability-dot { width: 7px; height: 7px; background: #5A9E6F; border-radius: 50%; animation: pulse 2s ease-in-out infinite; }
-    @keyframes pulse { 0%, 100% { opacity: 1; transform: scale(1); } 50% { opacity: 0.6; transform: scale(0.82); } }
+    @keyframes pulse { 0%, 100% { opacity:1; transform:scale(1); } 50% { opacity:0.6; transform:scale(0.82); } }
     .contact-links { display: flex; gap: 0.8rem; justify-content: center; flex-wrap: wrap; }
     .contact-item {
       display: flex; align-items: center; gap: 0.6rem;
-      padding: 0.85rem 1.4rem; border: 1px solid var(--border);
-      border-radius: 4px; background: var(--white); box-shadow: var(--shadow-sm);
-      color: var(--charcoal-dim); text-decoration: none; font-size: 0.83rem;
-      transition: border-color 0.2s, color 0.2s, transform 0.2s, box-shadow 0.2s;
+      padding: 0.85rem 1.4rem; border: 1px solid var(--dark-border);
+      border-radius: 4px; background: rgba(255,255,255,0.04);
+      color: var(--cream-dim); text-decoration: none; font-size: 0.83rem;
+      transition: all 0.2s;
     }
-    .contact-item:hover { border-color: var(--bronze); color: var(--bronze); transform: translateY(-2px); box-shadow: var(--shadow-md); }
+    .contact-item:hover { border-color: var(--bronze); color: var(--bronze-light); transform: translateY(-2px); background: rgba(184,115,51,0.08); }
 
     /* ── FOOTER ── */
     footer {
-      border-top: 1px solid var(--border); padding: 2rem 4rem;
+      border-top: 1px solid var(--dark-border); padding: 2rem 4rem;
       display: flex; justify-content: space-between; align-items: center;
-      font-size: 0.75rem; color: var(--charcoal-dim); font-family: var(--font-mono);
-      background: var(--white);
+      font-size: 0.75rem; color: var(--cream-dim); font-family: var(--font-mono);
+      background: var(--dark-2);
     }
-    footer a { color: var(--bronze); text-decoration: none; }
+    footer a { color: var(--bronze-light); text-decoration: none; }
 
     /* ── REVEAL ── */
     .reveal { opacity: 1; transform: none; transition: opacity 0.7s ease, transform 0.7s ease; }
@@ -416,12 +488,100 @@
     .reveal-delay-2 { transition-delay: 0.2s; }
     .reveal-delay-3 { transition-delay: 0.3s; }
 
+
+    /* ── HOW I CAN HELP ── */
+    #help { background: var(--cream-2); padding: 0; }
+    .help-intro {
+      max-width: 620px;
+      margin-bottom: 3.5rem;
+    }
+    .help-intro p {
+      font-size: 0.96rem;
+      color: var(--charcoal-dim);
+      line-height: 1.85;
+    }
+    .help-columns {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2.5rem;
+      align-items: start;
+    }
+    .help-col-label {
+      font-family: var(--font-mono);
+      font-size: 0.68rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--bronze);
+      margin-bottom: 1.2rem;
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+    }
+    .help-col-label::after {
+      content: '';
+      flex: 1;
+      height: 1px;
+      background: var(--border);
+    }
+    .help-cards { display: flex; flex-direction: column; gap: 1rem; }
+    .help-card {
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      padding: 1.5rem 1.6rem;
+      background: var(--cream-text);
+      box-shadow: var(--shadow-sm);
+      transition: box-shadow 0.25s, transform 0.25s, border-color 0.25s;
+      position: relative;
+      overflow: hidden;
+    }
+    .help-card::before {
+      content: '';
+      position: absolute;
+      left: 0; top: 0; bottom: 0;
+      width: 2.5px;
+      background: var(--bronze);
+      opacity: 0;
+      transition: opacity 0.25s;
+    }
+    .help-card:hover {
+      box-shadow: var(--shadow-md);
+      transform: translateY(-3px);
+      border-color: var(--sand-dark);
+    }
+    .help-card:hover::before { opacity: 1; }
+    .help-card-problem {
+      font-family: var(--font-display);
+      font-size: 0.98rem;
+      font-weight: 600;
+      color: var(--charcoal);
+      margin-bottom: 0.5rem;
+      line-height: 1.3;
+    }
+    .help-card-desc {
+      font-size: 0.83rem;
+      color: var(--charcoal-dim);
+      line-height: 1.72;
+    }
+    .help-cta {
+      margin-top: 3.5rem;
+      text-align: center;
+    }
+    .help-cta p {
+      font-size: 0.88rem;
+      color: var(--charcoal-dim);
+      margin-bottom: 1.2rem;
+    }
+    @media (max-width: 900px) {
+      .help-columns { grid-template-columns: 1fr; gap: 2rem; }
+    }
+
     /* ── MOBILE ── */
     @media (max-width: 900px) {
       .hero-photo-stat { display: none; }
       .hero-scroll { display: none; }
       nav { padding: 1.1rem 1.5rem; }
-      .nav-links { display: none; position: absolute; top: 100%; left: 0; right: 0; background: rgba(250,247,242,0.98); padding: 1.5rem; border-bottom: 1px solid var(--border); flex-direction: column; gap: 1.2rem; box-shadow: var(--shadow-md); }
+      .nav-links { display: none; position: absolute; top: 100%; left: 0; right: 0; background: rgba(22,18,16,0.97); padding: 1.5rem; border-bottom: 1px solid var(--dark-border); flex-direction: column; gap: 1rem; }
+      nav.light-nav .nav-links { background: rgba(250,247,242,0.98); border-bottom-color: var(--border); }
       .nav-links.open { display: flex; }
       .hamburger { display: flex; }
       #hero { grid-template-columns: 1fr; padding: 6rem 1.5rem 3rem; gap: 3rem; }
@@ -436,12 +596,50 @@
       footer { flex-direction: column; gap: 0.8rem; text-align: center; padding: 1.5rem; }
     }
     @media (max-width: 600px) {
-      .hero-name { font-size: 2.3rem; }
+      .hero-name { font-size: 2.5rem; }
       #stats { grid-template-columns: 1fr 1fr; }
       .stat-item::after { display: none; }
       .contact-links { flex-direction: column; align-items: stretch; }
     }
+/* ── FULL-VIEWPORT SCROLL SNAP ── */
+    html {
+      scroll-snap-type: y proximity;
+      scroll-behavior: smooth;
+    }
+    #hero,
+    #about,
+    #skills,
+    #projects,
+    #help,
+    #contact {
+      scroll-snap-align: start;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+    #hero {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      align-items: center;
+    }
+    #stats {
+      scroll-snap-align: none;
+    }
+    /* Section transition feel */
+    section {
+      transition: opacity 0.1s ease;
+    }
+    @media (max-width: 900px) {
+      html { scroll-snap-type: none; }
+      #hero, #about, #skills, #projects, #contact {
+        min-height: auto;
+        display: block;
+      }
+      #hero { display: grid; }
+    }
   </style>
+
   <!-- Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-25L3XQNN9F"></script>
   <script>
@@ -459,6 +657,7 @@
     <li><a href="#about">About</a></li>
     <li><a href="#skills">Expertise</a></li>
     <li><a href="#projects">Projects</a></li>
+    <li><a href="#help">How I Can Help</a></li>
     <li><a href="#contact">Contact</a></li>
     <li><a href="Shubham_Malpani_CV.pdf" target="_blank" class="nav-cta">Resume ↓</a></li>
   </ul>
@@ -470,11 +669,11 @@
 <!-- HERO -->
 <section id="hero">
   <div class="hero-grid-bg"></div>
-  <div class="hero-glow"></div>
+  <div class="hero-grid-lines"></div>
   <div class="hero-text">
     <div class="hero-eyebrow">Quantitative Credit Risk Researcher</div>
     <h1 class="hero-name">Shubham<br /><span>Malpani</span></h1>
-    <p class="hero-role">Quantitative Credit Risk Analyst &nbsp;|&nbsp; PD/LGD/EAD Model Development &amp; Validation &nbsp;|&nbsp; IFRS 9 &amp; Basel III/IV</p>
+    <p class="hero-role"><span class="key-dark">PD/LGD/EAD</span> Model Development &amp; Validation &nbsp;·&nbsp; <span class="key-dark">IFRS 9</span> &amp; <span class="key-dark">Basel III/IV</span></p>
     <div class="hero-tags">
       <span class="tag">PD/LGD/EAD Model Development &amp; Validation</span>
       <span class="tag">WoE Scorecards</span>
@@ -482,9 +681,8 @@
       <span class="tag">Open to Relocation</span>
     </div>
     <p class="hero-bio">
-      Credit Risk professional with 2+ years of industry experience, specialising in 
-      PD/LGD/EAD model development and validation, IFRS 9, and Basel III/IV — 
-      open to credit risk analytics roles.
+      Credit Risk professional with <span class="key-dark">2+ years</span> of industry experience, specialising in 
+      <span class="key-dark">PD/LGD/EAD</span> model development and validation, <span class="key-dark">IFRS 9</span>, and <span class="key-dark">Basel III/IV</span>.
     </p>
     <div class="hero-actions">
       <a href="#projects" class="btn-primary">
@@ -542,16 +740,16 @@
   <div class="about-grid">
     <div class="about-text reveal">
       <p>
-        I'm a <strong>Credit Risk professional</strong> with 2+ years of industry experience at Infospectrum Ltd (London, acquired by Lloyd's List Intelligence in 2025), where I delivered counterparty credit risk assessments, financial analysis, and regulatory reporting. In independent research, I have since built and validated a full PD/LGD/EAD pipeline in Python, benchmarked against Basel III IRB standards.
+        I'm a <strong>Credit Risk professional</strong> with <span class="key">2+ years</span> of industry experience at <span class="key">Infospectrum Ltd</span> (London, acquired by Lloyd's List Intelligence), where I delivered <span class="key">counterparty credit risk</span> assessments, financial analysis, and regulatory reporting. In independent research, I have since built and validated a full PD/LGD/EAD pipeline in Python, benchmarked against Basel III IRB standards.
       </p>
       <div class="about-highlight">
         "Independent PD/LGD/EAD model development and validation in Python — benchmarked against Basel III IRB standards and aligned with IFRS 9 requirements."
       </div>
       <p>
-        In independent research, I built an end-to-end PD/LGD/EAD pipeline on a 460,000+ record dataset — covering WoE/IV feature engineering, logistic regression scorecard development, and full out-of-sample validation. I have also built derivatives pricing models (Black-Scholes and binomial tree), though my primary focus remains credit risk.
+        In independent research, I built an end-to-end <span class="key">PD/LGD/EAD</span> pipeline on a <span class="key">460,000+ record</span> dataset — covering <span class="key">WoE/IV</span> feature engineering, logistic regression scorecard development, and full out-of-sample validation. I have also built derivatives pricing models, though my primary focus remains credit risk.
       </p>
       <p>
-        I'm open to <strong>Quantitative Risk Analytics roles</strong>, with a strong interest in leading financial institutions across Europe.
+        I'm open to <strong>Quantitative Risk Analytics roles worldwide</strong>, with a strong interest in leading financial institutions across Europe.
       </p>
       <div style="margin-top: 1.8rem;">
         <a href="#contact" class="btn-primary" style="font-size:0.79rem; padding: 0.7rem 1.5rem;">Get in Touch</a>
@@ -560,11 +758,11 @@
     <div class="about-cards reveal reveal-delay-1">
       <div class="detail-block">
         <h4>Current Status</h4>
-        <p><strong>Quantitative Credit Risk Researcher</strong> — Independent. Developing PD/LGD/EAD models and credit risk frameworks in Python. Open to full-time roles.</p>
+        <p><strong>Quantitative Credit Risk Researcher</strong> — Independent. Developing PD/LGD/EAD models and credit risk frameworks in Python. Open to full-time roles worldwide.</p>
       </div>
       <div class="detail-block">
         <h4>Industry Experience</h4>
-        <p><strong>2+ years</strong> at <strong>Infospectrum Ltd, London</strong> in counterparty credit risk, due diligence, and regulatory reporting.</p>
+        <p><span class="key">2+ years</span> at <strong>Infospectrum Ltd, London</strong> in <span class="key">counterparty credit risk</span>, due diligence, and regulatory reporting.</p>
       </div>
       <div class="detail-block">
         <h4>Technical Stack</h4>
@@ -572,7 +770,7 @@
       </div>
       <div class="detail-block">
         <h4>Location</h4>
-        <p>Currently based in India &middot; <strong>Open to relocation</strong> &middot; Available immediately</p>
+        <p>Currently based in India &middot; <strong>Open to relocation worldwide</strong> &middot; Available immediately</p>
       </div>
     </div>
   </div>
@@ -582,7 +780,7 @@
 <section id="skills">
   <div class="section-header reveal">
     <div class="section-label">Expertise</div>
-    <h2 class="section-title">Areas of <em>deep focus</em></h2>
+    <h2 class="section-title">Skills &amp; <em>technical depth</em></h2>
   </div>
   <div class="skills-grid">
     <div class="skill-card reveal">
@@ -640,6 +838,91 @@
       </div>
     </div>
   </div>
+
+  <div style="margin-top: 3.5rem;" class="reveal">
+    <div class="section-label" style="margin-bottom: 1.8rem;">Technical Depth</div>
+    <div class="depth-grid">
+
+      <div class="depth-card reveal">
+        <div class="depth-card-header">
+          <div class="depth-icon">01</div>
+          <h3>WoE &amp; Scorecard Development</h3>
+        </div>
+        <p>Weight of Evidence transformation converts variables into interpretable, monotonic bins. I use Information Value for feature selection and fine/coarse classing to build scorecards scaled to a 300&ndash;850 range, aligning with regulatory expectations for interpretability.</p>
+        <div class="depth-tags">
+          <span class="pill">WoE Binning</span><span class="pill">Information Value</span>
+          <span class="pill">Fine / Coarse Classing</span><span class="pill">Score Scaling</span>
+          <span class="pill">Odds-to-Score Mapping</span>
+        </div>
+      </div>
+
+      <div class="depth-card reveal reveal-delay-1">
+        <div class="depth-card-header">
+          <div class="depth-icon">02</div>
+          <h3>PD Modelling &amp; Calibration</h3>
+        </div>
+        <p>Probability of Default models built using logistic regression on WoE-transformed features, with calibration to long-run default rates. Validation covers discriminatory power (Gini, AUROC, KS), calibration (Hosmer-Lemeshow), and population stability (PSI).</p>
+        <div class="depth-tags">
+          <span class="pill">Logistic Regression</span><span class="pill">Long-Run Calibration</span>
+          <span class="pill">AUROC / Gini / KS</span><span class="pill">Hosmer-Lemeshow</span>
+          <span class="pill">PSI Monitoring</span>
+        </div>
+      </div>
+
+      <div class="depth-card reveal">
+        <div class="depth-card-header">
+          <div class="depth-icon">03</div>
+          <h3>LGD &amp; EAD Estimation</h3>
+        </div>
+        <p>Loss Given Default modelled using two-stage methodology separating zero-loss from positive-loss borrowers, with workout LGD and recovery rate analysis. EAD via credit conversion factors. Both aligned with IFRS 9 and Basel IRB requirements.</p>
+        <div class="depth-tags">
+          <span class="pill">Two-Stage LGD</span><span class="pill">Workout LGD</span>
+          <span class="pill">CCF Estimation</span><span class="pill">IFRS 9</span>
+          <span class="pill">Basel IRB</span>
+        </div>
+      </div>
+
+      <div class="depth-card reveal reveal-delay-1">
+        <div class="depth-card-header">
+          <div class="depth-icon">04</div>
+          <h3>Model Validation &amp; Diagnostics</h3>
+        </div>
+        <p>Independent validation covering discriminatory strength via CAP and ROC curves, calibration via back-testing against observed defaults, and stability via PSI and CSI. Results documented in regulatory-grade validation reports.</p>
+        <div class="depth-tags">
+          <span class="pill">CAP Curve</span><span class="pill">ROC Analysis</span>
+          <span class="pill">Back-testing</span><span class="pill">CSI / PSI</span>
+          <span class="pill">SR 11-7 Governance</span>
+        </div>
+      </div>
+
+      <div class="depth-card reveal">
+        <div class="depth-card-header">
+          <div class="depth-icon">05</div>
+          <h3>Derivatives Pricing</h3>
+        </div>
+        <p>Option pricing using binomial tree (backward induction, risk-neutral valuation) for American and European options, and Black-Scholes with dynamically estimated annualised volatility from historical returns, applied to live Nifty 50 market data.</p>
+        <div class="depth-tags">
+          <span class="pill">Black-Scholes</span><span class="pill">Binomial Tree</span>
+          <span class="pill">Risk-Neutral Valuation</span><span class="pill">Volatility Estimation</span>
+          <span class="pill">NetworkX</span>
+        </div>
+      </div>
+
+      <div class="depth-card reveal reveal-delay-1">
+        <div class="depth-card-header">
+          <div class="depth-icon">06</div>
+          <h3>Python for Quantitative Risk</h3>
+        </div>
+        <p>Production-oriented Python for credit risk: data pipelines in pandas, statistical modelling in statsmodels and scikit-learn, visualisation with matplotlib. Strong emphasis on clean, documented, reproducible code structured for regulatory review.</p>
+        <div class="depth-tags">
+          <span class="pill">pandas / numpy</span><span class="pill">scikit-learn</span>
+          <span class="pill">statsmodels</span><span class="pill">matplotlib</span>
+          <span class="pill">Git / GitHub</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
 </section>
 
 <!-- PROJECTS -->
@@ -658,7 +941,7 @@
             <span class="project-num">01 · Independent Research</span>
             <span class="project-featured-badge">Featured</span>
           </div>
-          <h3>End-to-End Credit Risk Modelling<br />(PD, LGD &amp; EAD)</h3>
+          <h3>End-to-End Credit Risk Modelling<br />(<span class="key-ul">PD, LGD &amp; EAD</span>)</h3>
           <p>Developed a full <strong style="color:var(--charcoal)">Expected Loss framework</strong> on a 460,000+ record dataset (17 features selected from 74 via WoE/IV analysis). Built an interpretable WoE-based scorecard (300–850 range) for PD estimation, with LGD and EAD modelling completing the regulatory-grade pipeline. Model validated out-of-sample using Gini, KS, and CAP curve diagnostics — benchmarked against Basel III IRB standards.</p>
           <div class="project-meta">
             <span class="pill">Python</span><span class="pill">scikit-learn</span>
@@ -712,7 +995,7 @@
           <span class="project-num">02</span>
           <span class="project-featured-badge">Production-Style Pipeline</span>
         </div>
-        <h3>Home Credit Default Risk &mdash; Full Expected Loss Pipeline</h3>
+        <h3>Home Credit Default Risk &mdash; <span class="key-ul">Full Expected Loss Pipeline</span></h3>
         <p>Production-style end-to-end Expected Loss framework across 307,511 loan applications and 5 relational tables. Built a WoE/IV pipeline from scratch across 91 candidate features (43 selected), a two-stage LGD model separating zero-loss from positive-loss borrowers, and a CCF-based EAD model. IFRS 9 staging applied across the full portfolio. Basel III validation confirms model Gini of 0.481 exceeds the 0.35 IRB minimum threshold.</p>
         <div class="project-metrics" style="margin-top:0.8rem;">
           <div class="metric">
@@ -749,7 +1032,7 @@
           <span class="project-num">03</span>
           <span class="project-featured-badge" style="background:var(--bronze-pale); border-color:rgba(139,94,52,0.25); color:var(--bronze);">Model Risk Analysis</span>
         </div>
-        <h3>PD Modelling on German Credit Data &mdash; A Documented Failure Analysis</h3>
+        <h3>PD Modelling &mdash; <span class="key-ul">Documented Failure Analysis</span></h3>
         <p>Built a complete PD modelling pipeline on the German Credit dataset (1,000 borrowers), then systematically documented why the model was always going to fail &mdash; not at the surface level of weak features, but at the level of experimental design. The target variable was simulated using the same features used to model it, creating a self-referential relationship that no amount of tuning could fix. The pipeline is technically correct throughout; the experiment is not.</p>
         <p style="font-size:0.83rem; color:var(--charcoal-dim); margin-top:0.4rem;">This distinction &mdash; between <strong style="color:var(--charcoal)">pipeline correctness and experimental validity</strong> &mdash; is directly relevant to model validation, SR 11-7 compliance, and internal model risk frameworks.</p>
         <div class="project-metrics" style="margin-top:0.5rem;">
@@ -813,103 +1096,67 @@
 </section>
 
 
-  <!-- SKILLS IN DEPTH -->
-  <section id="skills-depth">
+<!-- HOW I CAN HELP -->
+<section id="help">
+  <div style="padding: 6rem 4rem; width: 100%;">
     <div class="section-header reveal">
-      <div class="section-label">Technical Depth</div>
-      <h2 class="section-title">Skills <em>in depth</em></h2>
+      <div class="section-label">Services</div>
+      <h2 class="section-title">How I can <em>help you</em></h2>
     </div>
-    <div class="depth-grid">
-
-      <div class="depth-card reveal">
-        <div class="depth-card-header">
-          <div class="depth-icon">01</div>
-          <h3>WoE &amp; Scorecard Development</h3>
-        </div>
-        <p>Weight of Evidence (WoE) transformation converts continuous and categorical variables into interpretable, monotonic bins. I use Information Value (IV) for feature selection and fine/coarse classing to build scorecards scaled to a 300&ndash;850 range &mdash; aligning with regulatory expectations for interpretability.</p>
-        <div class="depth-tags">
-          <span class="pill">WoE Binning</span><span class="pill">Information Value</span>
-          <span class="pill">Fine / Coarse Classing</span><span class="pill">Score Scaling</span>
-          <span class="pill">Odds-to-Score Mapping</span>
-        </div>
-      </div>
-
-      <div class="depth-card reveal reveal-delay-1">
-        <div class="depth-card-header">
-          <div class="depth-icon">02</div>
-          <h3>PD Modelling &amp; Calibration</h3>
-        </div>
-        <p>Probability of Default models built using logistic regression on WoE-transformed features, with calibration to long-run default rates. Validation covers discriminatory power (Gini, AUROC, KS), calibration (Hosmer-Lemeshow), and population stability (PSI) across development and out-of-sample windows.</p>
-        <div class="depth-tags">
-          <span class="pill">Logistic Regression</span><span class="pill">Long-Run Calibration</span>
-          <span class="pill">AUROC / Gini / KS</span><span class="pill">Hosmer-Lemeshow</span>
-          <span class="pill">PSI Monitoring</span>
-        </div>
-      </div>
-
-      <div class="depth-card reveal">
-        <div class="depth-card-header">
-          <div class="depth-icon">03</div>
-          <h3>LGD &amp; EAD Estimation</h3>
-        </div>
-        <p>Loss Given Default modelled using workout LGD methodology, incorporating recovery rates and time value of money discounting. EAD estimation via credit conversion factors (CCF) for off-balance sheet exposures. Both aligned with IFRS 9 and Basel IRB requirements.</p>
-        <div class="depth-tags">
-          <span class="pill">Workout LGD</span><span class="pill">Recovery Rate Analysis</span>
-          <span class="pill">CCF Estimation</span><span class="pill">IFRS 9</span>
-          <span class="pill">Basel IRB</span>
-        </div>
-      </div>
-
-      <div class="depth-card reveal reveal-delay-1">
-        <div class="depth-card-header">
-          <div class="depth-icon">04</div>
-          <h3>Model Validation &amp; Diagnostics</h3>
-        </div>
-        <p>Independent validation of credit risk models covering the full suite of performance diagnostics. I assess discriminatory strength via CAP and ROC curves, calibration via back-testing against observed defaults, and stability via PSI and CSI across time windows and sub-segments.</p>
-        <div class="depth-tags">
-          <span class="pill">CAP Curve</span><span class="pill">ROC Analysis</span>
-          <span class="pill">Back-testing</span><span class="pill">CSI / PSI</span>
-          <span class="pill">Challenger Models</span>
-        </div>
-      </div>
-
-      <div class="depth-card reveal">
-        <div class="depth-card-header">
-          <div class="depth-icon">05</div>
-          <h3>Derivatives Pricing</h3>
-        </div>
-        <p>Option pricing using binomial tree (backward induction, risk-neutral valuation) for American and European options, and Black-Scholes with dynamically estimated annualised volatility from historical returns &mdash; implemented with live Nifty 50 market data and NetworkX visualisation of the pricing lattice.</p>
-        <div class="depth-tags">
-          <span class="pill">Black-Scholes</span><span class="pill">Binomial Tree</span>
-          <span class="pill">Risk-Neutral Valuation</span><span class="pill">Volatility Estimation</span>
-          <span class="pill">NetworkX</span>
-        </div>
-      </div>
-
-      <div class="depth-card reveal reveal-delay-1">
-        <div class="depth-card-header">
-          <div class="depth-icon">06</div>
-          <h3>Python for Quantitative Risk</h3>
-        </div>
-        <p>Production-oriented Python for credit risk: data pipelines in pandas, statistical modelling in statsmodels and scikit-learn, and visualisation with matplotlib. Strong emphasis on clean, documented, reproducible code &mdash; structured for regulatory review and independent validation.</p>
-        <div class="depth-tags">
-          <span class="pill">pandas / numpy</span><span class="pill">scikit-learn</span>
-          <span class="pill">statsmodels</span><span class="pill">matplotlib</span>
-          <span class="pill">Git / GitHub</span><span class="pill">Reproducible Code</span>
-        </div>
-      </div>
-
+    <div class="help-intro reveal">
+      <p>Beyond full-time roles, I take on short-term engagements where I can add genuine value. Whether you need a credit risk model built, an IFRS 9 framework designed, or guidance navigating a finance qualification — I am open to a conversation.</p>
     </div>
-  </section>
+    <div class="help-columns">
+      <div class="reveal">
+        <div class="help-col-label">For Professionals</div>
+        <div class="help-cards">
+          <div class="help-card">
+            <div class="help-card-problem">Need a credit risk model built from scratch?</div>
+            <div class="help-card-desc">I develop end-to-end <span class="key">PD, LGD, and EAD</span> frameworks in Python — from raw data through WoE/IV feature engineering, scorecard development, and full validation. Aligned with <span class="key">IFRS 9</span> and <span class="key">Basel III/IV</span>.</div>
+          </div>
+          <div class="help-card">
+            <div class="help-card-problem">Want your existing model independently reviewed?</div>
+            <div class="help-card-desc">I provide independent model validation covering discriminatory power (AUROC, Gini, KS), calibration, population stability, and regulatory alignment — with a written findings report.</div>
+          </div>
+          <div class="help-card">
+            <div class="help-card-problem">Building an IFRS 9 ECL framework?</div>
+            <div class="help-card-desc">I can help design or review staging criteria, lifetime PD estimation, macro-economic overlays, and ECL calculation methodology for your portfolio.</div>
+          </div>
+        </div>
+      </div>
+      <div class="reveal reveal-delay-1">
+        <div class="help-col-label">For Students</div>
+        <div class="help-cards">
+          <div class="help-card">
+            <div class="help-card-problem">Struggling with CFA Level I or II?</div>
+            <div class="help-card-desc">Having passed <span class="key">CFA Level II</span>, I can help you build a study plan, work through quantitative methods, fixed income, and derivatives, and develop the exam discipline that actually works.</div>
+          </div>
+          <div class="help-card">
+            <div class="help-card-problem">Applying for an MSc in Finance or Banking?</div>
+            <div class="help-card-desc">I completed my <span class="key">MSc Banking &amp; International Finance</span> at Bayes Business School, City, University of London. I can help with school selection, personal statement, and interview preparation.</div>
+          </div>
+          <div class="help-card">
+            <div class="help-card-problem">Want to break into credit risk analytics?</div>
+            <div class="help-card-desc">I can help you understand what hiring managers look for, how to build a relevant Python project portfolio, and how to position yourself for quantitative risk roles.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="help-cta reveal">
+      <p>Not sure if what you need fits here? Reach out anyway.</p>
+      <a href="#contact" class="btn-primary">Let&#39;s Talk &rarr;</a>
+    </div>
+  </div>
+</section>
 
 <!-- CONTACT -->
 <section id="contact">
   <div class="contact-inner">
     <div class="section-label reveal" style="justify-content:center;">Contact</div>
-    <h2 class="section-title reveal" style="margin-bottom:1.1rem;">Let's <em>connect</em></h2>
+    <h2 class="section-title reveal" style="margin-bottom:1.1rem;">Let&#39;s <em>connect</em></h2>
     <p class="reveal">
-      I'm actively exploring Quantitative Risk Analytics roles. 
-      Whether you're a recruiter, hiring manager, or fellow quant — I'd love to hear from you.
+      I&#39;m actively exploring Quantitative Risk Analytics roles. Whether you&#39;re a recruiter,
+      hiring manager, or fellow quant — I&#39;d love to hear from you.
     </p>
     <div class="availability-badge reveal">
       <div class="availability-dot"></div>
@@ -944,7 +1191,21 @@
 <script>
   // Nav scroll
   const nav = document.getElementById('navbar');
-  window.addEventListener('scroll', () => nav.classList.toggle('scrolled', window.scrollY > 50));
+  const heroSection = document.getElementById('hero');
+  function updateNav() {
+    const heroBottom = heroSection.getBoundingClientRect().bottom;
+    if (heroBottom <= 60) {
+      nav.classList.add('scrolled', 'light-nav');
+    } else if (window.scrollY > 50) {
+      nav.classList.add('scrolled');
+      nav.classList.remove('light-nav');
+    } else {
+      nav.classList.remove('scrolled', 'light-nav');
+    }
+  }
+  window.addEventListener('scroll', updateNav);
+  updateNav();
+
   // Hamburger menu
   const hamburger = document.getElementById('hamburger');
   const navLinks = document.getElementById('navLinks');
@@ -952,7 +1213,6 @@
     navLinks.classList.toggle('open');
     hamburger.classList.toggle('active');
   });
-  // Close menu when any nav link is clicked
   navLinks.querySelectorAll('a').forEach(link => {
     link.addEventListener('click', () => {
       navLinks.classList.remove('open');
@@ -960,10 +1220,9 @@
     });
   });
 
-  // ── Scroll reveal — progressive enhancement ──
-  // Only hide elements after JS confirms IntersectionObserver works
+  // ── Scroll reveal ──
+  const revealEls = document.querySelectorAll('.reveal');
   requestAnimationFrame(() => {
-    const revealEls = document.querySelectorAll('.reveal');
     revealEls.forEach(el => el.classList.add('hidden'));
     const obs = new IntersectionObserver(entries => {
       entries.forEach(e => {
@@ -975,21 +1234,20 @@
       });
     }, { threshold: 0, rootMargin: '0px 0px 0px 0px' });
     revealEls.forEach(el => obs.observe(el));
-    // Safety net — reveal all after 1.5s no matter what
     setTimeout(() => {
       revealEls.forEach(el => { el.classList.remove('hidden'); el.classList.add('visible'); });
     }, 1500);
   });
 
-  // ── Stat counters — run immediately on load ──
+  // ── Stat counters ──
+  let statsRun = false;
   function animCounter(el) {
     const target = parseFloat(el.dataset.target);
     const suffix = el.dataset.suffix || '';
     if (isNaN(target)) return;
-    const duration = 1200;
-    const startTime = performance.now();
+    const duration = 1200, start = performance.now();
     function step(now) {
-      const p = Math.min((now - startTime) / duration, 1);
+      const p = Math.min((now - start) / duration, 1);
       const ease = 1 - Math.pow(1 - p, 3);
       const val = Math.floor(ease * target);
       el.textContent = val + suffix;
@@ -998,23 +1256,20 @@
     }
     requestAnimationFrame(step);
   }
-  // Run on load — no observer dependency
+  function runCounters() {
+    if (statsRun) return; statsRun = true;
+    document.querySelectorAll('.stat-num[data-target]').forEach(animCounter);
+  }
+  const statObs = new IntersectionObserver(entries => {
+    if (entries.some(e => e.isIntersecting)) { runCounters(); statObs.disconnect(); }
+  }, { threshold: 0 });
+  const statsSection = document.getElementById('stats');
+  if (statsSection) statObs.observe(statsSection);
   window.addEventListener('load', () => {
     document.querySelectorAll('.stat-num[data-target]').forEach(animCounter);
   });
-  // Belt-and-braces: also run after 500ms
-  setTimeout(() => {
-    document.querySelectorAll('.stat-num[data-target]').forEach(el => {
-      const target = parseFloat(el.dataset.target);
-      const suffix = el.dataset.suffix || '';
-      if (!isNaN(target) && el.textContent === '0') {
-        el.textContent = (target % 1 !== 0 ? target.toFixed(1) : target) + suffix;
-      }
-    });
-  }, 500);
 
-
-    // Build email at runtime — bypass Cloudflare obfuscation
+  // ── Build email ──
   function buildEmail() {
     const e = ['shubham', '.', 'malpani97', '@', 'gmail', '.', 'com'].join('');
     const link = document.getElementById('email-link');
