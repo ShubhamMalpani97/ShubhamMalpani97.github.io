@@ -1,106 +1,190 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Shubham Malpani | Quantitative Risk & Credit Analytics</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Projects — Shubham Malpani | Credit Risk Modelling Portfolio</title>
+  <meta name="description" content="End-to-end PD/LGD/EAD frameworks, IFRS 9 staging, Basel III IRB validation, model failure analysis, and derivatives pricing — all built in Python.">
+  <meta property="og:title" content="Projects — Shubham Malpani | Credit Risk Modelling Portfolio">
+  <meta property="og:description" content="End-to-end PD/LGD/EAD frameworks, IFRS 9 staging, Basel III IRB validation, model failure analysis, and derivatives pricing — all built in Python.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-25L3XQNN9F"></script>
+  <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-25L3XQNN9F');</script>
 
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <!-- SEO Meta -->
-    <meta name="description" content="Credit Risk Analyst specializing in PD, LGD, EAD modelling aligned with IFRS 9 and Basel frameworks. Quantitative risk professional targeting Netherlands banking roles.">
-    <meta name="keywords" content="Credit Risk, Quantitative Risk, PD Model, LGD, EAD, IFRS 9, Basel III, Basel IV, Risk Analytics Netherlands, Model Validation">
-    <meta name="author" content="Shubham Malpani">
-
-    <!-- Open Graph (LinkedIn Preview) -->
-    <meta property="og:title" content="Shubham Malpani | Quantitative Risk & Credit Analytics">
-    <meta property="og:description" content="Quantitative Credit Risk Analyst focused on regulatory modelling, PD LGD EAD frameworks, and European banking risk analytics.">
-    <meta property="og:type" content="website">
-
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
-  
 </head>
-
-<body>
-
-<nav>
-    <a href="index.html">Home</a>
-    <a href="projects.html">Projects</a>
-    <a href="insights.html">Risk Insights</a>
-    <a href="Shubham_Malpani_CV.pdf" target="_blank">Resume</a>
-    <a href="https://www.linkedin.com/in/shubham-malpani97" target="_blank">LinkedIn</a>
-</nav>
-
-<div class="container">
-
-    <h1>Technical Projects</h1>
-<div class="section">
-    <div class="card">
-    <div class="project">
-        <h3>End-to-End Credit Risk Modelling (PD, LGD, EAD)</h3>
-        <div class="meta">Lending Club 2007–2014 | Logistic Regression Scorecard | Regulatory Modelling</div>
-
-        <p>
-            Developed a full Expected Loss framework estimating PD, LGD, and EAD using WoE-based feature engineering and
-            interpretable scorecard scaling (300–850 range).
-        </p>
-
-        <div class="metrics">
-            <strong>Out-of-Sample Performance:</strong><br>
-            AUROC: 0.702<br>
-            Gini: 0.404<br>
-            KS Statistic: 0.297
-        </div>
-
-        <p>
-            Validation performed using out-of-sample testing via scikit-learn train-test methodology,
-            supported by Gini, KS, and CAP curve diagnostics to assess discriminatory strength and robustness.
-        </p>
-
-        <a href="https://github.com/ShubhamMalpani97/credit-risk-pd-lgd-ead" class="btn" target="_blank">
-            View Repository
-        </a>
+<body class="page" data-page="projects">
+<header id="site-header">
+  <div class="header-inner">
+    <a href="index.html" class="logo">
+      <div class="logo-badge">SM</div>
+      <span class="logo-name">Shubham Malpani</span>
+    </a>
+    <nav class="nav-desktop">
+      <a href="index.html" class="nav-link" data-page="home">Home</a>
+      <a href="projects.html" class="nav-link" data-page="projects">Projects</a>
+      <a href="scorecard.html" class="nav-link" data-page="scorecard">Live Scorecard</a>
+      <a href="services.html" class="nav-link" data-page="services">Services</a>
+      <a href="about.html" class="nav-link" data-page="about">About</a>
+      <a href="contact.html" class="nav-link" data-page="contact">Contact</a>
+    </nav>
+    <div class="header-actions">
+      <a href="Shubham_Malpani_CV.pdf" target="_blank" class="btn btn-amber-outline resume-btn">
+        Resume
+        <svg width="14" height="14" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/></svg>
+      </a>
+      <button class="menu-btn" id="menu-btn" aria-label="Menu">
+        <svg id="menu-icon" width="18" height="18" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/></svg>
+      </button>
     </div>
+  </div>
+  <div class="mobile-menu" id="mobile-menu">
+    <div class="mobile-menu-inner">
+      <a href="index.html" class="mobile-nav-link" data-page="home">Home</a>
+      <a href="projects.html" class="mobile-nav-link" data-page="projects">Projects</a>
+      <a href="scorecard.html" class="mobile-nav-link" data-page="scorecard">Live Scorecard</a>
+      <a href="services.html" class="mobile-nav-link" data-page="services">Services</a>
+      <a href="about.html" class="mobile-nav-link" data-page="about">About</a>
+      <a href="contact.html" class="mobile-nav-link" data-page="contact">Contact</a>
+      <a href="Shubham_Malpani_CV.pdf" target="_blank" class="btn btn-amber-outline" style="margin-top:0.5rem;justify-content:center;">
+        Download Resume
+        <svg width="14" height="14" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/></svg>
+      </a>
     </div>
+  </div>
+</header>
+
+<main>
+
+<div class="container section-pad">
+  <div class="label reveal">Work</div>
+  <h1 style="font-family:var(--font-d);font-size:clamp(2.5rem,6vw,4rem);margin-top:0.5rem" class="reveal">
+    Selected <span class="gradient-text" style="font-style:italic">projects</span>
+  </h1>
+  <p style="color:var(--fg-muted);max-width:38rem;margin-top:1rem;line-height:1.75" class="reveal">
+    End-to-end credit risk frameworks and quantitative finance models — all built independently in Python, benchmarked against regulatory standards.
+  </p>
+
+  <div style="display:flex;flex-direction:column;gap:1.5rem;margin-top:3.5rem">
+
+    <a href="project.html?id=credit-risk-pd-lgd-ead" class="project-article reveal" style="display:block">
+      <div class="project-meta-row"><span>01</span><span class="project-meta-sep"></span><span class="project-cat">Independent Research</span><span class="chip" style="margin-left:0.5rem">Featured</span></div>
+      <div class="project-title">End-to-End Credit Risk Modelling — PD, LGD &amp; EAD</div>
+      <p class="project-desc">Full Expected Loss framework on a 460,000+ record Lending Club dataset. WoE/IV pipeline selecting 17 features from 74. Interpretable scorecard scaled 300–850. Validated out-of-sample using Gini, KS, and CAP curve diagnostics against Basel III IRB standards.</p>
+      <div class="project-tags"><span class="tag">Python</span><span class="tag">WoE/IV</span><span class="tag">Logistic Regression</span><span class="tag">IFRS 9</span><span class="tag">Basel III IRB</span><span class="tag">Lending Club</span></div>
+      <div class="project-metrics">
+        <div><div class="metric-val">0.702</div><div class="metric-label">AUROC</div></div>
+        <div><div class="metric-val">0.404</div><div class="metric-label">Gini</div></div>
+        <div><div class="metric-val">0.297</div><div class="metric-label">KS Stat</div></div>
+        <div><div class="metric-val">460k+</div><div class="metric-label">Records</div></div>
+      </div>
+      <div class="project-actions"><span class="btn btn-amber">View case study →</span><a href="https://github.com/ShubhamMalpani97/credit-risk-pd-lgd-ead" target="_blank" rel="noreferrer" onclick="event.stopPropagation()" class="btn btn-outline">GitHub</a></div>
+    </a>
+
+    <a href="project.html?id=home-credit-expected-loss" class="project-article reveal" style="display:block">
+      <div class="project-meta-row"><span>02</span><span class="project-meta-sep"></span><span class="project-cat">Production-Style Pipeline</span><span class="chip" style="margin-left:0.5rem">Featured</span></div>
+      <div class="project-title">Home Credit Default Risk — Full Expected Loss Pipeline</div>
+      <p class="project-desc">Production-style EL framework across 307,511 applications and 5 relational tables. Two-stage LGD model. CCF-based EAD. IFRS 9 staging applied portfolio-wide. Basel III IRB validated — Gini of 0.481 clears the 0.35 IRB minimum.</p>
+      <div class="project-tags"><span class="tag">Python</span><span class="tag">Two-Stage LGD</span><span class="tag">CCF/EAD</span><span class="tag">IFRS 9 Staging</span><span class="tag">Basel III IRB</span><span class="tag">307k Records</span></div>
+      <div class="project-metrics">
+        <div><div class="metric-val">0.741</div><div class="metric-label">Test AUROC</div></div>
+        <div><div class="metric-val">0.481</div><div class="metric-label">Test Gini</div></div>
+        <div><div class="metric-val">0.364</div><div class="metric-label">KS Stat</div></div>
+        <div><div class="metric-val">0.77%</div><div class="metric-label">Portfolio EL</div></div>
+      </div>
+      <div class="project-actions"><span class="btn btn-amber">View case study →</span><a href="https://github.com/ShubhamMalpani97/home-credit-expected-loss" target="_blank" rel="noreferrer" onclick="event.stopPropagation()" class="btn btn-outline">GitHub</a></div>
+    </a>
+
+    <a href="project.html?id=pd-modelling-failure-analysis" class="project-article reveal" style="display:block">
+      <div class="project-meta-row"><span>03</span><span class="project-meta-sep"></span><span class="project-cat">Model Risk Analysis</span></div>
+      <div class="project-title">PD Modelling on German Credit Data — Documented Failure Analysis</div>
+      <p class="project-desc">A technically correct PD pipeline built to fail — intentionally. Documented the experimental design flaw at the root: a self-referential target variable that made meaningful discrimination impossible. The lesson: pipeline correctness and experimental validity are independent. Directly relevant to SR 11-7 and EBA model risk governance.</p>
+      <div class="project-tags"><span class="tag">Python</span><span class="tag">WoE/IV</span><span class="tag">Model Risk</span><span class="tag">SR 11-7</span><span class="tag">Scorecard Scaling</span></div>
+      <div class="project-metrics">
+        <div><div class="metric-val">0.548</div><div class="metric-label">Test AUROC</div></div>
+        <div><div class="metric-val">0.096</div><div class="metric-label">Test Gini</div></div>
+        <div><div class="metric-val">21 pts</div><div class="metric-label">Gini Gap</div></div>
+        <div><div class="metric-val">1,000</div><div class="metric-label">Borrowers</div></div>
+      </div>
+      <div class="project-actions"><span class="btn btn-amber">View case study →</span><a href="https://github.com/ShubhamMalpani97/pd-modelling-failure-analysis" target="_blank" rel="noreferrer" onclick="event.stopPropagation()" class="btn btn-outline">GitHub</a></div>
+    </a>
+
+    <a href="project.html?id=binomial-tree" class="project-article reveal" style="display:block">
+      <div class="project-meta-row"><span>04</span><span class="project-meta-sep"></span><span class="project-cat">Quantitative Finance</span></div>
+      <div class="project-title">Binomial Tree Option Pricing (Nifty 50)</div>
+      <p class="project-desc">Multi-step binomial tree framework using backward induction and risk-neutral valuation. American and European options priced using live Nifty 50 market data. NetworkX used to visualise the full pricing lattice.</p>
+      <div class="project-tags"><span class="tag">Python</span><span class="tag">Binomial Tree</span><span class="tag">Risk-Neutral Valuation</span><span class="tag">NetworkX</span><span class="tag">Nifty 50</span></div>
+      <div class="project-actions"><a href="https://github.com/ShubhamMalpani97/binomial-tree-option-pricing-model" target="_blank" rel="noreferrer" class="btn btn-outline">View on GitHub</a></div>
+    </a>
+
+    <a href="project.html?id=black-scholes" class="project-article reveal" style="display:block">
+      <div class="project-meta-row"><span>05</span><span class="project-meta-sep"></span><span class="project-cat">Quantitative Finance</span></div>
+      <div class="project-title">Black-Scholes Option Pricing (Nifty 50)</div>
+      <p class="project-desc">Python implementation of Black-Scholes using dynamically estimated annualised volatility from historical returns — replacing fixed-assumption approaches with a data-driven method tied to live Nifty 50 data.</p>
+      <div class="project-tags"><span class="tag">Python</span><span class="tag">Black-Scholes</span><span class="tag">Volatility Estimation</span><span class="tag">Real-Time Data</span><span class="tag">Nifty 50</span></div>
+      <div class="project-actions"><a href="https://github.com/ShubhamMalpani97/black-scholes-nifty50" target="_blank" rel="noreferrer" class="btn btn-outline">View on GitHub</a></div>
+    </a>
+
+  </div>
 </div>
-    
-<div class="section">
-    <div class="card">
-    <div class="project">
-        <h3>Binomial Tree Option Pricing Model (Nifty 50)</h3>
-        <div class="meta">Python | Risk-Neutral Valuation | American & European Options</div>
 
-        <p>
-            Implemented a multi-step binomial tree framework using backward induction and live market data.
-            Integrated NetworkX for graphical tree visualisation.
-        </p>
-
-        <a href="https://github.com/ShubhamMalpani97/binomial-tree-option-pricing-model" class="btn" target="_blank">
-            View Repository
-        </a>
+</main>
+<footer>
+  <div class="footer-inner">
+    <div>
+      <div class="footer-brand">Shubham Malpani</div>
+      <p class="footer-tagline">Quantitative Credit Risk Researcher — building production-grade PD, LGD, and EAD frameworks aligned with IFRS 9 and Basel III/IV.</p>
+      <div class="footer-location">
+        <svg width="14" height="14" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+        India &middot; Open to relocation
+      </div>
     </div>
+    <div>
+      <div class="footer-section-title">Navigate</div>
+      <ul class="footer-links">
+        <li><a href="projects.html">Projects</a></li>
+        <li><a href="scorecard.html">Live Scorecard</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
     </div>
-</div>
-        
-<div class="section">
-    <div class="card">
-    <div class="project">
-        <h3>Black-Scholes Option Pricing Model (Nifty 50)</h3>
-        <div class="meta">Python | Volatility Estimation | Real-Time Data Integration</div>
-
-        <p>
-            Developed a Python implementation of Black-Scholes using dynamically estimated annualised volatility
-            from historical returns instead of fixed assumptions.
-        </p>
-
-        <a href="https://github.com/ShubhamMalpani97/black-scholes-nifty50" class="btn" target="_blank">
-            View Repository
-        </a>
+    <div>
+      <div class="footer-section-title">Connect</div>
+      <ul class="footer-links">
+        <li>
+          <a href="https://github.com/ShubhamMalpani97" target="_blank" rel="noopener noreferrer">
+            <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0112 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/></svg>
+            GitHub
+          </a>
+        </li>
+        <li>
+          <a href="https://www.linkedin.com/in/shubham-malpani97" target="_blank" rel="noopener noreferrer">
+            <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+            LinkedIn
+          </a>
+        </li>
+        <li>
+          <a href="contact.html">
+            <svg width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+            Email
+          </a>
+        </li>
+      </ul>
     </div>
+  </div>
+  <div class="footer-bottom">
+    <div class="footer-bottom-inner">
+      <div>&copy; 2026 Shubham Malpani &middot; All rights reserved. Unauthorised reproduction or distribution of this site's content is prohibited.</div>
+      <div>PD &middot; LGD &middot; EAD &middot; IFRS 9 &middot; Basel III/IV</div>
     </div>
-</div>    
+  </div>
+</footer>
 
-</div>
+<script src="site.js"></script>
 
 </body>
 </html>
