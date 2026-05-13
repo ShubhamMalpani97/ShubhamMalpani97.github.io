@@ -16,7 +16,7 @@ html { scroll-behavior: smooth; }
   --warning:    oklch(0.78 0.15 80);
   --danger:     oklch(0.62 0.22 25);
   --radius:     0.5rem;
-  --font-d:     'Fraunces', 'Times New Roman', serif;
+  --font-d:     'Playfair Display', Georgia, serif;
   --font-s:     'Inter', system-ui, sans-serif;
   --font-m:     'JetBrains Mono', ui-monospace, monospace;
 }

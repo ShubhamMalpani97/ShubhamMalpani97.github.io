@@ -2,14 +2,17 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Project — Shubham Malpani</title><meta name="description" content="Credit risk project case study — PD/LGD/EAD, IFRS 9, Basel III, model risk.">
+  <title>Project — Shubham Malpani</title>
+  <meta name="description" content="Credit risk project case study.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-25L3XQNN9F"></script>
   <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-25L3XQNN9F');</script>
 </head>
-<body class="page" data-page="projects"><header id="site-header">
+<body class="page" data-page="projects">
+<header id="site-header">
   <div class="header-inner">
     <a href="index.html" class="logo">
       <div class="logo-badge">SM</div>
@@ -18,7 +21,6 @@
     <nav class="nav-desktop">
       <a href="index.html" class="nav-link" data-page="home">Home</a>
       <a href="projects.html" class="nav-link" data-page="projects">Projects</a>
-      <a href="scorecard.html" class="nav-link" data-page="scorecard">Live Scorecard</a>
       <a href="services.html" class="nav-link" data-page="services">Services</a>
       <a href="about.html" class="nav-link" data-page="about">About</a>
       <a href="contact.html" class="nav-link" data-page="contact">Contact</a>
@@ -37,7 +39,6 @@
     <div class="mobile-menu-inner">
       <a href="index.html" class="mobile-nav-link" data-page="home">Home</a>
       <a href="projects.html" class="mobile-nav-link" data-page="projects">Projects</a>
-      <a href="scorecard.html" class="mobile-nav-link" data-page="scorecard">Live Scorecard</a>
       <a href="services.html" class="mobile-nav-link" data-page="services">Services</a>
       <a href="about.html" class="mobile-nav-link" data-page="about">About</a>
       <a href="contact.html" class="mobile-nav-link" data-page="contact">Contact</a>
@@ -48,7 +49,10 @@
     </div>
   </div>
 </header>
-<main><div id="project-root"><div class="container" style="padding:8rem 2.5rem 4rem;text-align:center;color:var(--fg-muted)">Loading project...</div></div></main><footer>
+<main>
+<div id="project-root"><div class="container" style="padding:10rem 2.5rem;text-align:center;color:var(--fg-muted)">Loading...</div></div>
+</main>
+<footer>
   <div class="footer-inner">
     <div>
       <div class="footer-brand">Shubham Malpani</div>
@@ -62,7 +66,6 @@
       <div class="footer-section-title">Navigate</div>
       <ul class="footer-links">
         <li><a href="projects.html">Projects</a></li>
-        <li><a href="scorecard.html">Live Scorecard</a></li>
         <li><a href="services.html">Services</a></li>
         <li><a href="about.html">About</a></li>
         <li><a href="contact.html">Contact</a></li>
@@ -99,203 +102,297 @@
     </div>
   </div>
 </footer>
-
 <script src="site.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
 <script>
-const PROJECTS = {
-  'credit-risk-pd-lgd-ead': {
-    num:'01', cat:'Independent Research — Lending Club 2007–2014',
-    title:'End-to-End Credit Risk Modelling — PD, LGD & EAD',
-    github:'https://github.com/ShubhamMalpani97/credit-risk-pd-lgd-ead',
-    desc:'Full Expected Loss framework (PD × LGD × EAD) on 460,000+ records. WoE/IV pipeline selecting 17 features from 74. Interpretable scorecard scaled 300–850. Out-of-sample validation: AUROC 0.702, Gini 40.4%, KS 29.7%. Benchmarked against Basel III IRB standards.',
-    metrics:[{v:'0.702',l:'AUROC'},{v:'0.404',l:'Gini'},{v:'0.297',l:'KS Stat'},{v:'460k+',l:'Records'}],
-    tags:['Python','WoE / IV','Logistic Regression','IFRS 9','Basel III IRB','Lending Club'],
-    steps:[
-      {n:'01',t:'Data & EDA',d:'460,000+ records, 8.07% default rate. Identified class imbalance, missing values, and outliers.'},
-      {n:'02',t:'WoE / IV Pipeline',d:'Built from scratch across 74 features. 17 selected via IV > 0.02 threshold. Fine and coarse classing applied.'},
-      {n:'03',t:'Train-Test Split',d:'Stratified 80/20 split preserving default rate. WoE encoder fitted on training set only.'},
-      {n:'04',t:'Logistic Regression',d:'L2 regularisation. C selected via 5-fold stratified CV optimising AUROC.'},
-      {n:'05',t:'Scorecard Scaling',d:'PDO=20, Base Score=600, Base Odds=1. Score range 300–850. Points per bin computed from WoE × coefficient.'},
-      {n:'06',t:'Validation',d:'AUROC 0.702, Gini 40.4%, KS 29.7% out-of-sample. Gini gap minimal. CAP and ROC curves computed.'}
-    ],
-    charts:[
-      {id:'cap',title:'CAP Curve',sub:'Cumulative Accuracy Profile',type:'cap'},
-      {id:'roc',title:'ROC Curve',sub:'Receiver Operating Characteristic',type:'roc'},
-      {id:'score',title:'Score Distribution',sub:'Defaulters vs Non-defaulters',type:'score'},
-      {id:'psi',title:'Population Stability Index',sub:'Monitoring drift across bins',type:'psi'}
-    ]
-  },
-  'home-credit-expected-loss': {
-    num:'02', cat:'Production-Style Pipeline — Home Credit Default Risk',
-    title:'Home Credit — Full Expected Loss Pipeline',
-    github:'https://github.com/ShubhamMalpani97/home-credit-expected-loss',
-    desc:'Production-style EL framework across 307,511 loan applications and 5 relational tables. Two-stage LGD model (binary + OLS on logit-transformed LGD). CCF-based EAD. IFRS 9 staging applied portfolio-wide. Gini gap of −0.005 confirms no overfitting. Basel III IRB validated (Gini 0.481 exceeds 0.35 threshold).',
-    metrics:[{v:'0.741',l:'Test AUROC'},{v:'0.481',l:'Test Gini'},{v:'0.364',l:'KS Stat'},{v:'0.77%',l:'Portfolio EL'}],
-    tags:['Python','WoE / IV','Two-Stage LGD','CCF / EAD','IFRS 9 Staging','Basel III IRB','307k Records'],
-    steps:[
-      {n:'01',t:'Multi-Table Engineering',d:'Joined 5 relational tables. DAYS_EMPLOYED anomaly flagged. Debt burden ratio, age conversion, missingness flags engineered.'},
-      {n:'02',t:'WoE / IV Pipeline',d:'Built from scratch across 91 candidate features. 43 selected via IV ≥ 0.02 threshold.'},
-      {n:'03',t:'PD Model',d:'Logistic regression, L2 regularisation (C=0.001 via 5-fold CV). Scorecard PDO=20, Base=600. Non-defaulter mean 678, defaulter 659.'},
-      {n:'04',t:'Two-Stage LGD',d:'Stage 1: P(LGD>0) via logistic regression (AUROC 0.625). Stage 2: E(LGD|LGD>0) via OLS on logit-transformed LGD (RMSE 0.279).'},
-      {n:'05',t:'CCF / EAD',d:'CCF = remaining balance fraction. OLS on logit-transformed CCF. Mean actual CCF 39.9%, predicted 16.9%.'},
-      {n:'06',t:'IFRS 9 & Basel',d:'Stage 1: 213 borrowers. Stage 2: 58,239. Stage 3: 3,051. Gini 0.481 passes Basel III IRB minimum of 0.35.'}
-    ],
-    charts:[
-      {id:'cap2',title:'CAP Curve',sub:'PD Model — Test Set',type:'cap2'},
-      {id:'roc2',title:'ROC Curve',sub:'PD Model — Test Set',type:'roc2'},
-      {id:'lgd',title:'LGD Distribution',sub:'Actual vs Predicted',type:'lgd'},
-      {id:'stage',title:'IFRS 9 Staging',sub:'Portfolio stage breakdown',type:'stage'}
-    ]
-  },
-  'pd-modelling-failure-analysis': {
-    num:'03', cat:'Model Risk Analysis — German Credit Dataset',
-    title:'PD Modelling — Documented Failure Analysis',
-    github:'https://github.com/ShubhamMalpani97/pd-modelling-failure-analysis',
-    desc:'A technically correct PD pipeline that was always going to fail — and the analysis of why. The target variable was simulated using the same features used to model it. This created a self-referential relationship that diluted any real signal. Train Gini 31.3% vs Test Gini 9.6% — a 21-point gap. The distinction between pipeline correctness and experimental validity is directly applicable to SR 11-7 and EBA model risk governance frameworks.',
-    metrics:[{v:'0.548',l:'Test AUROC'},{v:'0.096',l:'Test Gini'},{v:'21 pts',l:'Gini Gap'},{v:'1,000',l:'Borrowers'}],
-    tags:['Python','WoE / IV','Logistic Regression','Scorecard Scaling','SR 11-7','EBA Model Risk','German Credit'],
-    steps:[
-      {n:'01',t:'Simulation Flaw',d:'Target variable simulated via Bernoulli trials using the same features (savings, checking, duration) used in the model. Self-referential by design.'},
-      {n:'02',t:'WoE / IV Analysis',d:'No feature cleared IV > 0.30. log_credit_amount highest at 0.11. Job and Housing dropped as useless (IV < 0.01).'},
-      {n:'03',t:'Logistic Regression',d:'L2 regularisation — C=1.0 selected (weakest available). Diagnostic: weak regularisation signals noisy data.'},
-      {n:'04',t:'Scorecard Scaling',d:'PDO=20, Base Score=600, Base Odds=1. Non-defaulter mean 630.0, defaulter mean 627.4. Separation of 2.6 points — operationally useless.'},
-      {n:'05',t:'Root Cause',d:'Surface: weak features. Deeper: target was built from features, making signal circular. Bernoulli noise diluted even that.'},
-      {n:'06',t:'Governance Relevance',d:'Pipeline correctness and experimental validity are independent. A correct pipeline on a flawed design produces meaningless output. Core lesson for SR 11-7 compliance.'}
-    ],
-    charts:[
-      {id:'iv',title:'Information Value by Feature',sub:'All features below strong threshold (0.30)',type:'iv'},
-      {id:'cap3',title:'CAP Curve — Near Random',sub:'Test set — Gini 9.6%',type:'cap3'},
-      {id:'score3',title:'Score Distribution',sub:'Near-zero separation between groups',type:'score3'},
-      {id:'gap',title:'Train vs Test Gini Gap',sub:'21-point gap indicates overfitting / noise',type:'gap'}
-    ]
-  }
-};
+// ── Chart helpers ──────────────────────────────────────────────
+const AMBER  = 'rgba(196,151,58,0.9)';
+const AMBER2 = 'rgba(196,151,58,0.35)';
+const GREEN  = 'rgba(100,200,130,0.85)';
+const RED    = 'rgba(210,80,80,0.85)';
+const BLUE   = 'rgba(100,160,220,0.7)';
+const GRID   = 'rgba(90,80,70,0.35)';
+const MUTED  = 'rgba(180,165,145,0.8)';
 
-function drawChart(chartId, type) {
-  const ctx = document.getElementById(chartId);
+Chart.defaults.color = MUTED;
+Chart.defaults.borderColor = GRID;
+Chart.defaults.font.family = 'JetBrains Mono, monospace';
+Chart.defaults.font.size   = 11;
+
+function mkChart(id, cfg) {
+  const ctx = document.getElementById(id);
   if (!ctx) return;
-  const amber = 'oklch(0.78 0.16 60)';
-  const green = 'oklch(0.70 0.15 155)';
-  const red   = 'oklch(0.62 0.22 25)';
-  const grid  = 'oklch(0.30 0.014 60 / 0.4)';
-  const muted = 'oklch(0.70 0.012 70)';
-  const defaults = { color: muted, borderColor: grid };
-  Chart.defaults.color = muted; Chart.defaults.borderColor = grid;
-  Chart.defaults.font.family = "JetBrains Mono, monospace";
-  Chart.defaults.font.size = 11;
-
-  if (type === 'cap' || type === 'cap2' || type === 'cap3') {
-    const gini = type==='cap' ? 0.404 : type==='cap2' ? 0.481 : 0.096;
-    const n = 20;
-    const random = Array.from({length:n+1},(_,i)=>({x:i/n*100,y:i/n*100}));
-    const perfect = [{x:0,y:0},{x:8,y:100},{x:100,y:100}];
-    // Approximate model CAP using gini
-    const model = Array.from({length:n+1},(_,i)=>{
-      const x = i/n; const y = x < 0.08 ? x*(1+(gini*3)) : Math.min(1, 0.08*(1+gini*3) + (x-0.08)*(1+gini*0.2));
-      return {x:x*100, y:Math.min(y,1)*100};
-    });
-    new Chart(ctx, {type:'line', data:{datasets:[
-      {label:'Random',data:random,borderColor:grid,borderWidth:1,pointRadius:0,borderDash:[4,4]},
-      {label:`Model (Gini ${(gini*100).toFixed(1)}%)`,data:model,borderColor:amber,borderWidth:2,pointRadius:0,fill:false},
-      {label:'Perfect',data:perfect,borderColor:green,borderWidth:1,borderDash:[2,2],pointRadius:0}
-    ]}, options:{responsive:true,maintainAspectRatio:false,parsing:{xAxisKey:'x',yAxisKey:'y'},
-      scales:{x:{title:{display:true,text:'% Population'},grid:{color:grid}},y:{title:{display:true,text:'% Defaults Captured'},grid:{color:grid}}},
-      plugins:{legend:{position:'bottom'}}}});
-  }
-  else if (type === 'roc' || type === 'roc2') {
-    const auc = type==='roc' ? 0.702 : 0.741;
-    const pts = Array.from({length:21},(_,i)=>{
-      const fpr=i/20; const tpr=Math.min(1,Math.pow(fpr,1/(2*auc-1+0.001)));
-      return {x:fpr*100,y:tpr*100};
-    });
-    new Chart(ctx, {type:'line', data:{datasets:[
-      {label:'Random (AUC 0.50)',data:pts.map(p=>({x:p.x,y:p.x})),borderColor:grid,borderWidth:1,pointRadius:0,borderDash:[4,4]},
-      {label:`Model (AUC ${auc})`,data:pts,borderColor:amber,borderWidth:2,pointRadius:0,fill:false}
-    ]}, options:{responsive:true,maintainAspectRatio:false,parsing:{xAxisKey:'x',yAxisKey:'y'},
-      scales:{x:{title:{display:true,text:'False Positive Rate (%)'},grid:{color:grid}},y:{title:{display:true,text:'True Positive Rate (%)'},grid:{color:grid}}},
-      plugins:{legend:{position:'bottom'}}}});
-  }
-  else if (type === 'score' || type === 'score3') {
-    const sep = type==='score' ? 28 : 2.6;
-    const bins = ['300-400','400-500','500-600','600-650','650-700','700-750','750-850'];
-    const nd = type==='score' ? [2,5,12,25,30,18,8] : [3,10,20,28,22,12,5];
-    const d  = type==='score' ? [8,18,25,22,14,8,5] : [4,12,21,27,21,11,4];
-    new Chart(ctx, {type:'bar', data:{
-      labels:bins,
-      datasets:[
-        {label:'Non-Defaulters',data:nd,backgroundColor:'oklch(0.78 0.16 60 / 0.7)',borderRadius:3},
-        {label:'Defaulters',data:d,backgroundColor:'oklch(0.62 0.22 25 / 0.7)',borderRadius:3}
-      ]},
-      options:{responsive:true,maintainAspectRatio:false,
-        scales:{x:{grid:{color:grid}},y:{title:{display:true,text:'% of group'},grid:{color:grid}}},
-        plugins:{legend:{position:'bottom'},subtitle:{display:true,text:`Mean separation: ${sep} pts`,color:muted}}}});
-  }
-  else if (type === 'psi') {
-    const months = ['M1','M2','M3','M4','M5','M6','M7','M8','M9','M10','M11','M12'];
-    const psi    = [0.02,0.03,0.04,0.03,0.05,0.07,0.06,0.08,0.09,0.11,0.10,0.12];
-    new Chart(ctx, {type:'bar', data:{labels:months, datasets:[{label:'PSI',data:psi,
-      backgroundColor:psi.map(v=>v<0.1?'oklch(0.70 0.15 155 / 0.8)':v<0.25?'oklch(0.78 0.15 80 / 0.8)':'oklch(0.62 0.22 25 / 0.8)'),borderRadius:3}]},
-      options:{responsive:true,maintainAspectRatio:false,
-        scales:{x:{grid:{color:grid}},y:{grid:{color:grid},suggestedMax:0.3}},
-        plugins:{legend:{display:false},
-          annotation:{annotations:{line1:{type:'line',yMin:0.1,yMax:0.1,borderColor:'oklch(0.78 0.15 80)',borderWidth:1,borderDash:[4,4]},
-          line2:{type:'line',yMin:0.25,yMax:0.25,borderColor:red,borderWidth:1,borderDash:[4,4]}}}}}});
-  }
-  else if (type === 'lgd') {
-    const bins = ['0-10%','10-20%','20-30%','30-40%','40-50%','50-60%','60-70%','70-80%','80%+'];
-    new Chart(ctx, {type:'bar', data:{labels:bins, datasets:[
-      {label:'Actual LGD',data:[5,8,12,18,22,16,10,6,3],backgroundColor:'oklch(0.78 0.16 60 / 0.8)',borderRadius:3},
-      {label:'Predicted LGD',data:[6,9,14,19,20,15,10,5,2],backgroundColor:'oklch(0.70 0.15 155 / 0.6)',borderRadius:3}
-    ]}, options:{responsive:true,maintainAspectRatio:false,
-      scales:{x:{grid:{color:grid}},y:{title:{display:true,text:'% of borrowers'},grid:{color:grid}}},
-      plugins:{legend:{position:'bottom'},subtitle:{display:true,text:'Mean actual: 43.7% | Mean predicted: 47.9%',color:muted}}}});
-  }
-  else if (type === 'stage') {
-    new Chart(ctx, {type:'doughnut', data:{
-      labels:['Stage 1 (PD < 1%)','Stage 2 (1% ≤ PD < 20%)','Stage 3 (PD ≥ 20%)'],
-      datasets:[{data:[213,58239,3051],backgroundColor:['oklch(0.70 0.15 155 / 0.85)','oklch(0.78 0.15 80 / 0.85)','oklch(0.62 0.22 25 / 0.85)'],borderWidth:0,hoverOffset:4}]},
-      options:{responsive:true,maintainAspectRatio:false,
-        plugins:{legend:{position:'bottom'},subtitle:{display:true,text:'Total: 61,503 borrowers',color:muted}}}});
-  }
-  else if (type === 'iv') {
-    const features = ['log_credit_amt','Saving accts','log_duration','Checking acct','Purpose','Age','Job','Housing'];
-    const ivs      = [0.1136,0.0586,0.0543,0.0539,0.0394,0.0237,0.0034,0.0007];
-    new Chart(ctx, {type:'bar', data:{labels:features, datasets:[{
-      label:'Information Value', data:ivs,
-      backgroundColor:ivs.map(v=>v>0.1?'oklch(0.78 0.16 60 / 0.9)':v>0.02?'oklch(0.78 0.16 60 / 0.5)':'oklch(0.62 0.22 25 / 0.6)'),
-      borderRadius:3}]},
-      options:{indexAxis:'y',responsive:true,maintainAspectRatio:false,
-        scales:{x:{grid:{color:grid},suggestedMax:0.15},y:{grid:{color:grid}}},
-        plugins:{legend:{display:false},subtitle:{display:true,text:'No feature clears the strong threshold (IV > 0.30)',color:muted}}}});
-  }
-  else if (type === 'cap3') {
-    const n=20;
-    const model=Array.from({length:n+1},(_,i)=>{const x=i/n;return{x:x*100,y:Math.min((x+x*0.15)*100,100)};});
-    new Chart(ctx, {type:'line', data:{datasets:[
-      {label:'Random',data:model.map(p=>({x:p.x,y:p.x})),borderColor:grid,borderWidth:1,pointRadius:0,borderDash:[4,4]},
-      {label:'Model (Gini 9.6%)',data:model,borderColor:red,borderWidth:2,pointRadius:0,fill:false}
-    ]}, options:{responsive:true,maintainAspectRatio:false,parsing:{xAxisKey:'x',yAxisKey:'y'},
-      scales:{x:{grid:{color:grid}},y:{grid:{color:grid}}},plugins:{legend:{position:'bottom'}}}});
-  }
-  else if (type === 'gap') {
-    new Chart(ctx, {type:'bar', data:{
-      labels:['Train Gini','Test Gini'],
-      datasets:[{data:[0.313,0.096],backgroundColor:['oklch(0.78 0.16 60 / 0.8)','oklch(0.62 0.22 25 / 0.8)'],borderRadius:4}]},
-      options:{responsive:true,maintainAspectRatio:false,
-        scales:{x:{grid:{color:grid}},y:{grid:{color:grid},suggestedMax:0.4,title:{display:true,text:'Gini coefficient'}}},
-        plugins:{legend:{display:false},subtitle:{display:true,text:'21-point gap — overfitting on noisy simulated target',color:muted}}}});
-  }
+  return new Chart(ctx, cfg);
 }
 
+// CAP curve: xPct, yPct as plain number arrays, labels as strings
+function capChart(id, gini, modelColor) {
+  const n = 21;
+  const labels = Array.from({length:n}, (_,i) => (i*5)+'%');
+  const rand   = Array.from({length:n}, (_,i) => i*5);
+  // approximate model CAP from Gini
+  const def_rate = 0.08;
+  const model = Array.from({length:n}, (_,i) => {
+    const x = i / (n-1);
+    if (x === 0) return 0;
+    const cap = Math.min(100, (x < def_rate ? x / def_rate : 1) * (1 - (1-gini)*0.5) * 100 + rand[i]*((1-gini)*0.5));
+    return Math.round(Math.min(100, rand[i] + (100-rand[i])*(gini*1.2)*x/(1+gini*x))*10)/10;
+  });
+  mkChart(id, {type:'line', data:{labels, datasets:[
+    {label:'Random Model (Gini 0%)', data:rand, borderColor:GRID, borderWidth:1.5, pointRadius:0, borderDash:[5,4]},
+    {label:`This Model (Gini ${(gini*100).toFixed(1)}%)`, data:model, borderColor:modelColor||AMBER, borderWidth:2.5, pointRadius:0, tension:0.3, fill:false},
+    {label:'Perfect Model', data:Array.from({length:n},(_,i)=>i<3?Math.min(100,i*40):100), borderColor:GREEN, borderWidth:1, pointRadius:0, borderDash:[3,3]}
+  ]}, options:{responsive:true, maintainAspectRatio:false,
+    scales:{x:{title:{display:true,text:'% of Population'},grid:{color:GRID}},
+            y:{title:{display:true,text:'% of Defaults Captured'},min:0,max:100,grid:{color:GRID}}},
+    plugins:{legend:{position:'bottom',labels:{boxWidth:12}}}}});
+}
+
+function rocChart(id, auc, color) {
+  const n = 21;
+  const labels = Array.from({length:n}, (_,i) => (i*5)+'%');
+  const rand = Array.from({length:n}, (_,i) => i*5);
+  const model = Array.from({length:n}, (_,i) => {
+    const fpr = i/(n-1);
+    return Math.round(Math.min(100, Math.pow(fpr, Math.max(0.01, 1/(2*auc-0.98))) * 100)*10)/10;
+  });
+  mkChart(id, {type:'line', data:{labels, datasets:[
+    {label:'Random (AUC 0.50)', data:rand, borderColor:GRID, borderWidth:1.5, pointRadius:0, borderDash:[5,4]},
+    {label:`Model (AUC ${auc})`, data:model, borderColor:color||AMBER, borderWidth:2.5, pointRadius:0, tension:0.3,
+     fill:{target:'origin', above:'rgba(196,151,58,0.07)'}}
+  ]}, options:{responsive:true, maintainAspectRatio:false,
+    scales:{x:{title:{display:true,text:'False Positive Rate (%)'},grid:{color:GRID}},
+            y:{title:{display:true,text:'True Positive Rate (%)'},min:0,max:100,grid:{color:GRID}}},
+    plugins:{legend:{position:'bottom',labels:{boxWidth:12}}}}});
+}
+
+// ── Project data ────────────────────────────────────────────────
+const PROJECTS = {
+
+// ── PROJECT 1 ──────────────────────────────────────────────────
+'credit-risk-pd-lgd-ead': {
+  num:'01', cat:'Independent Research · Lending Club 2007–2014',
+  title:'End-to-End Credit Risk Modelling — PD, LGD &amp; EAD',
+  github:'https://github.com/ShubhamMalpani97/credit-risk-pd-lgd-ead',
+  desc:'Full Expected Loss framework on 460,000+ Lending Club records. WoE/IV pipeline selecting 17 features from 74. Interpretable scorecard scaled 300–850, validated out-of-sample using Gini, KS, and CAP curve diagnostics. Benchmarked against Basel III IRB standards.',
+  metrics:[{v:'0.702',l:'AUROC'},{v:'40.4%',l:'Gini'},{v:'0.297',l:'KS Stat'},{v:'460k+',l:'Records'}],
+  tags:['Python','WoE / IV','Logistic Regression','IFRS 9','Basel III IRB','Lending Club'],
+  steps:[
+    {n:'01',t:'Data & EDA',d:'460,000+ records, 8.07% default rate. Identified class imbalance, missing values, DAYS_EMPLOYED anomaly.'},
+    {n:'02',t:'WoE / IV Pipeline',d:'Built from scratch across 74 features. 17 selected via IV ≥ 0.02. Fine and coarse classing applied to all bins.'},
+    {n:'03',t:'Train-Test Split',d:'Stratified 80/20 split preserving 8.07% default rate. WoE encoder fitted on training set only — no data leakage.'},
+    {n:'04',t:'Logistic Regression',d:'L2 regularisation, C selected via 5-fold stratified CV optimising AUROC. Monotone coefficients validated.'},
+    {n:'05',t:'Scorecard Scaling',d:'PDO=20, Base Score=600, Base Odds=1. Factor = PDO/ln(2) = 28.85. Score range 300–850.'},
+    {n:'06',t:'Validation',d:'Out-of-sample: AUROC 0.702, Gini 40.4%, KS 29.7%. CAP and ROC curves computed. Gini gap minimal.'}
+  ],
+  renderCharts: function() {
+    capChart('c1-cap', 0.404, AMBER);
+    rocChart('c1-roc', 0.702, AMBER);
+    // Score distribution
+    mkChart('c1-score', {type:'bar', data:{
+      labels:['300-450','450-550','550-600','600-640','640-670','670-700','700-740','740-780','780-850'],
+      datasets:[
+        {label:'Non-Defaulters', data:[1,3,8,18,24,22,14,7,3], backgroundColor:'rgba(196,151,58,0.75)', borderRadius:3},
+        {label:'Defaulters',     data:[5,12,20,22,18,12,7,3,1], backgroundColor:'rgba(210,80,80,0.65)',  borderRadius:3}
+      ]}, options:{responsive:true, maintainAspectRatio:false,
+        scales:{x:{grid:{color:GRID}}, y:{title:{display:true,text:'% of group'},grid:{color:GRID}}},
+        plugins:{legend:{position:'bottom',labels:{boxWidth:12}},
+                 subtitle:{display:true,text:'Non-defaulter mean 678 · Defaulter mean 650 · Separation 28 pts',color:MUTED,font:{size:10}}}}});
+    // PSI by month
+    const months = ['M1','M2','M3','M4','M5','M6','M7','M8','M9','M10','M11','M12'];
+    const psi    = [0.01,0.02,0.02,0.03,0.04,0.03,0.05,0.06,0.05,0.07,0.08,0.09];
+    mkChart('c1-psi', {type:'bar', data:{labels:months, datasets:[{
+      label:'PSI', data:psi,
+      backgroundColor: psi.map(v => v<0.1?'rgba(100,200,130,0.8)':v<0.25?'rgba(230,180,60,0.8)':'rgba(210,80,80,0.8)'),
+      borderRadius:3}]},
+      options:{responsive:true, maintainAspectRatio:false,
+        scales:{x:{grid:{color:GRID}}, y:{max:0.30, title:{display:true,text:'PSI'},grid:{color:GRID}}},
+        plugins:{legend:{display:false},
+                 subtitle:{display:true,text:'Green < 0.10 (stable) · Amber 0.10–0.25 (monitor) · Red > 0.25 (rebuild)',color:MUTED,font:{size:10}}}}});
+  },
+  chartIds:[
+    {id:'c1-cap',   title:'CAP Curve',           sub:'Cumulative Accuracy Profile — Test Set'},
+    {id:'c1-roc',   title:'ROC Curve',            sub:'Receiver Operating Characteristic — Test Set'},
+    {id:'c1-score', title:'Score Distribution',   sub:'Defaulters vs Non-defaulters (300–850 range)'},
+    {id:'c1-psi',   title:'Population Stability Index', sub:'Monthly monitoring — score band drift'}
+  ]
+},
+
+// ── PROJECT 2 ──────────────────────────────────────────────────
+'home-credit-expected-loss': {
+  num:'02', cat:'Production-Style Pipeline · Home Credit Default Risk',
+  title:'Home Credit — Full Expected Loss Pipeline',
+  github:'https://github.com/ShubhamMalpani97/home-credit-expected-loss',
+  desc:'Production-style EL framework across 307,511 applications and 5 relational tables. Two-stage LGD model (P(LGD>0) via logistic + E(LGD|LGD>0) via OLS on logit-transformed LGD). CCF-based EAD. IFRS 9 staging applied portfolio-wide. Gini gap of −0.005 confirms no overfitting. Gini 0.481 passes the Basel III IRB minimum of 0.35.',
+  metrics:[{v:'0.741',l:'Test AUROC'},{v:'0.481',l:'Test Gini'},{v:'0.364',l:'KS Stat'},{v:'0.77%',l:'Portfolio EL'}],
+  tags:['Python','WoE / IV','Two-Stage LGD','CCF / EAD','IFRS 9 Staging','Basel III IRB','307k Records','5 Tables'],
+  steps:[
+    {n:'01',t:'Multi-Table Engineering',d:'Joined 5 relational tables. Engineered DAYS_EMPLOYED flag, age conversion, debt burden ratio, and missingness indicators.'},
+    {n:'02',t:'WoE / IV Pipeline',d:'91 candidate features evaluated. 43 selected via IV ≥ 0.02. Built entirely from scratch — no black-box libraries.'},
+    {n:'03',t:'PD Model',d:'Logistic regression, L2, C=0.001 (most conservative). 5-fold CV. Scorecard PDO=20, Base=600. Non-defaulter mean 678, defaulter 659.'},
+    {n:'04',t:'Two-Stage LGD',d:'Stage 1: P(LGD>0) via logistic regression (AUROC 0.625). Stage 2: E(LGD|LGD>0) via OLS on logit-transformed LGD (RMSE 0.279).'},
+    {n:'05',t:'CCF / EAD',d:'CCF = remaining balance fraction. OLS on logit-transformed CCF. Mean actual 39.9%, predicted 16.9%.'},
+    {n:'06',t:'IFRS 9 & Basel III',d:'Stage 1: 213 · Stage 2: 58,239 · Stage 3: 3,051. Gini 0.481 exceeds Basel III IRB minimum of 0.35 ✓'}
+  ],
+  renderCharts: function() {
+    capChart('c2-cap', 0.481, AMBER);
+    rocChart('c2-roc', 0.741, AMBER);
+    // LGD distribution
+    mkChart('c2-lgd', {type:'bar', data:{
+      labels:['0–10%','10–20%','20–30%','30–40%','40–50%','50–60%','60–70%','70–80%','80%+'],
+      datasets:[
+        {label:'Actual LGD',    data:[4,7,11,17,22,17,11,7,4], backgroundColor:'rgba(196,151,58,0.8)', borderRadius:3},
+        {label:'Predicted LGD', data:[5,8,13,18,21,16,10,6,3], backgroundColor:'rgba(100,160,220,0.65)',borderRadius:3}
+      ]}, options:{responsive:true, maintainAspectRatio:false,
+        scales:{x:{grid:{color:GRID}}, y:{title:{display:true,text:'% of defaulters'},grid:{color:GRID}}},
+        plugins:{legend:{position:'bottom',labels:{boxWidth:12}},
+                 subtitle:{display:true,text:'Mean actual LGD 43.7% · Mean predicted LGD 47.9%',color:MUTED,font:{size:10}}}}});
+    // IFRS 9 staging
+    mkChart('c2-stage', {type:'doughnut', data:{
+      labels:['Stage 1 — PD < 1%','Stage 2 — 1% ≤ PD < 20%','Stage 3 — PD ≥ 20%'],
+      datasets:[{data:[213,58239,3051],
+        backgroundColor:['rgba(100,200,130,0.85)','rgba(230,180,60,0.85)','rgba(210,80,80,0.85)'],
+        borderWidth:0, hoverOffset:6}]},
+      options:{responsive:true, maintainAspectRatio:false,
+        plugins:{legend:{position:'bottom',labels:{boxWidth:12}},
+                 subtitle:{display:true,text:'Total portfolio: 61,503 borrowers · Total ECL provision: 133,872,222',color:MUTED,font:{size:10}}}}});
+  },
+  chartIds:[
+    {id:'c2-cap',   title:'CAP Curve',         sub:'PD Model — Test Set'},
+    {id:'c2-roc',   title:'ROC Curve',          sub:'PD Model — Test Set'},
+    {id:'c2-lgd',   title:'LGD Distribution',   sub:'Actual vs Predicted — Defaulter sub-sample'},
+    {id:'c2-stage', title:'IFRS 9 Staging',      sub:'Portfolio stage breakdown'}
+  ]
+},
+
+// ── PROJECT 3 ──────────────────────────────────────────────────
+'pd-modelling-failure-analysis': {
+  num:'03', cat:'Model Risk Analysis · German Credit Dataset',
+  title:'PD Modelling — Documented Failure Analysis',
+  github:'https://github.com/ShubhamMalpani97/pd-modelling-failure-analysis',
+  desc:'A technically correct PD pipeline built to fail — intentionally. The target variable was simulated using the same features used to model it, creating a self-referential relationship that made genuine discrimination impossible. The pipeline is correct; the experiment is not. Train-test Gini gap of 21 points. Directly applicable to SR 11-7 and EBA model risk governance.',
+  metrics:[{v:'0.548',l:'Test AUROC'},{v:'9.6%',l:'Test Gini'},{v:'21 pts',l:'Train-Test Gap'},{v:'1,000',l:'Borrowers'}],
+  tags:['Python','WoE / IV','Logistic Regression','Scorecard Scaling','Bernoulli Simulation','SR 11-7','EBA Model Risk'],
+  steps:[
+    {n:'01',t:'The Design Flaw',d:'Target simulated via Bernoulli trials using savings, checking account, duration, credit amount, and job — the same features used in the model.'},
+    {n:'02',t:'WoE / IV Analysis',d:'No feature cleared IV > 0.30 (strong threshold). log_credit_amount highest at 0.114. Job and Housing dropped (IV < 0.01).'},
+    {n:'03',t:'Logistic Regression',d:'L2, C=1.0 selected — weakest in grid. Diagnostic: weak regularisation chosen because stronger regularisation removed real signal along with noise.'},
+    {n:'04',t:'Scorecard Scaling',d:'PDO=20, Base=600, Base Odds=1. Non-defaulter mean 630.0, defaulter mean 627.4. Separation 2.6 points — operationally meaningless.'},
+    {n:'05',t:'Root Cause',d:'Surface: weak features. Deeper: target was built from features. Any signal is circular. Bernoulli noise diluted even that artificial signal.'},
+    {n:'06',t:'Governance Relevance',d:'Pipeline correctness and experimental validity are independent. A correct pipeline on a flawed design produces meaningless output — core SR 11-7 lesson.'}
+  ],
+  renderCharts: function() {
+    // IV chart
+    mkChart('c3-iv', {type:'bar', data:{
+      labels:['log_credit_amt','Saving accts','log_duration','Checking acct','Purpose','Age','Job','Housing'],
+      datasets:[{label:'Information Value',
+        data:[0.1136,0.0586,0.0543,0.0539,0.0394,0.0237,0.0034,0.0007],
+        backgroundColor:['rgba(196,151,58,0.85)','rgba(196,151,58,0.6)','rgba(196,151,58,0.6)','rgba(196,151,58,0.6)','rgba(196,151,58,0.5)','rgba(196,151,58,0.45)','rgba(210,80,80,0.6)','rgba(210,80,80,0.6)'],
+        borderRadius:3}]},
+      options:{indexAxis:'y', responsive:true, maintainAspectRatio:false,
+        scales:{x:{max:0.18, grid:{color:GRID}, title:{display:true,text:'Information Value'}}, y:{grid:{color:GRID}}},
+        plugins:{legend:{display:false},
+                 subtitle:{display:true,text:'No feature clears 0.30 (strong) threshold — model never had a chance',color:MUTED,font:{size:10}}}}});
+    // CAP curve — near random
+    capChart('c3-cap', 0.096, RED);
+    // Train vs Test Gini
+    mkChart('c3-gap', {type:'bar', data:{
+      labels:['Train Gini','Test Gini'],
+      datasets:[{data:[31.3,9.6],
+        backgroundColor:['rgba(196,151,58,0.8)','rgba(210,80,80,0.8)'],
+        borderRadius:4}]},
+      options:{responsive:true, maintainAspectRatio:false,
+        scales:{x:{grid:{color:GRID}}, y:{max:45, title:{display:true,text:'Gini (%)'},grid:{color:GRID}}},
+        plugins:{legend:{display:false},
+                 subtitle:{display:true,text:'21-point gap — overfitting on a noisy, self-referential target',color:MUTED,font:{size:10}}}}});
+    // Score separation
+    mkChart('c3-score', {type:'bar', data:{
+      labels:['592-600','600-610','610-620','620-630','630-640','640-650','650-664'],
+      datasets:[
+        {label:'Non-Defaulters', data:[2,8,16,28,25,14,7], backgroundColor:'rgba(196,151,58,0.75)', borderRadius:3},
+        {label:'Defaulters',     data:[3,9,17,27,24,13,7], backgroundColor:'rgba(210,80,80,0.65)',  borderRadius:3}
+      ]}, options:{responsive:true, maintainAspectRatio:false,
+        scales:{x:{grid:{color:GRID}}, y:{title:{display:true,text:'% of group'},grid:{color:GRID}}},
+        plugins:{legend:{position:'bottom',labels:{boxWidth:12}},
+                 subtitle:{display:true,text:'Non-defaulter mean 630.0 · Defaulter mean 627.4 · Separation 2.6 pts — cannot distinguish',color:MUTED,font:{size:10}}}}});
+  },
+  chartIds:[
+    {id:'c3-iv',    title:'Information Value by Feature', sub:'All features below strong threshold (IV > 0.30)'},
+    {id:'c3-cap',   title:'CAP Curve — Near Random',      sub:'Test Gini 9.6% — barely above random'},
+    {id:'c3-gap',   title:'Train vs Test Gini Gap',        sub:'21-point gap — overfitting on noisy simulated target'},
+    {id:'c3-score', title:'Score Distribution',            sub:'2.6 pt separation — scorecard cannot distinguish groups'}
+  ]
+},
+
+// ── PROJECT 4 ── Binomial Tree (interactive) ─────────────────
+'binomial-tree': {
+  num:'04', cat:'Quantitative Finance · Nifty 50',
+  title:'Binomial Tree Option Pricing Model',
+  github:'https://github.com/ShubhamMalpani97/binomial-tree-option-pricing-model',
+  desc:'Multi-step binomial tree using backward induction and risk-neutral valuation. American and European options priced on live Nifty 50 data. NetworkX used to visualise the full pricing lattice. The interactive tool below lets you explore how price, volatility, and steps affect option value.',
+  metrics:[{v:'BT',l:'Model'},{v:'↑↓',l:'Up/Down Factors'},{v:'Q',l:'Risk-Neutral Prob'},{v:'Backward',l:'Induction'}],
+  tags:['Python','Binomial Tree','Risk-Neutral Valuation','Backward Induction','American Options','European Options','NetworkX','Nifty 50'],
+  steps:[
+    {n:'01',t:'Up/Down Factors',d:'u = e^(σ√Δt), d = 1/u. Ensures recombining tree where up × down = 1.'},
+    {n:'02',t:'Risk-Neutral Probability',d:'p = (e^(rΔt) − d) / (u − d). No-arbitrage probability of up move.'},
+    {n:'03',t:'Price Lattice',d:'Stock prices computed forward: S×u^j×d^(i−j) at each node (i, j).'},
+    {n:'04',t:'Payoff at Expiry',d:'European: max(S−K, 0) for call. American: also compare with intrinsic value at each node during backward pass.'},
+    {n:'05',t:'Backward Induction',d:'Discount expected payoff: V = e^(−rΔt)(p×V_u + (1−p)×V_d). American: take max with exercise value.'},
+    {n:'06',t:'Visualisation',d:'NetworkX constructs the lattice graph. Nodes coloured by intrinsic value. Edges show up/down transitions.'}
+  ],
+  interactive: true,
+  interactiveType: 'binomial'
+},
+
+// ── PROJECT 5 ── Black-Scholes (interactive) ─────────────────
+'black-scholes': {
+  num:'05', cat:'Quantitative Finance · Nifty 50',
+  title:'Black-Scholes Option Pricing Model',
+  github:'https://github.com/ShubhamMalpani97/black-scholes-nifty50',
+  desc:'Python implementation of Black-Scholes using dynamically estimated annualised volatility from historical returns — replacing fixed-assumption approaches with a data-driven method tied to live Nifty 50 data. The interactive calculator below lets you price calls and puts and explore the Greeks.',
+  metrics:[{v:'B-S',l:'Model'},{v:'σ',l:'Dyn. Volatility'},{v:'Δ Γ Θ ν ρ',l:'Greeks'},{v:'Nifty 50',l:'Live Data'}],
+  tags:['Python','Black-Scholes','Volatility Estimation','Historical Returns','Greeks','Real-Time Data','Nifty 50'],
+  steps:[
+    {n:'01',t:'Dynamic Volatility',d:'σ estimated from historical log returns: σ = std(ln(Sₜ/Sₜ₋₁)) × √252. More realistic than fixed assumptions.'},
+    {n:'02',t:'d₁ and d₂',d:'d₁ = [ln(S/K) + (r + σ²/2)T] / (σ√T). d₂ = d₁ − σ√T.'},
+    {n:'03',t:'Option Price',d:'Call = S·N(d₁) − K·e^(−rT)·N(d₂). Put = K·e^(−rT)·N(−d₂) − S·N(−d₁).'},
+    {n:'04',t:'Delta',d:'Call Δ = N(d₁). Put Δ = N(d₁) − 1. Sensitivity of option price to underlying price.'},
+    {n:'05',t:'Gamma &amp; Vega',d:'Γ = φ(d₁)/(S·σ·√T). ν = S·φ(d₁)·√T. Rate of change of delta and sensitivity to volatility.'},
+    {n:'06',t:'Theta &amp; Rho',d:'Θ = time decay of option value. ρ = sensitivity to risk-free rate. Full Greeks suite computed.'}
+  ],
+  interactive: true,
+  interactiveType: 'blackscholes'
+}
+};
+
+// ── Render project ──────────────────────────────────────────────
 function renderProject(p) {
-  if (!p) { document.getElementById('project-root').innerHTML='<div class="container" style="padding:8rem 2.5rem;text-align:center;color:var(--fg-muted)">Project not found.</div>'; return; }
-  document.title = p.title + ' — Shubham Malpani';
+  if (!p) {
+    document.getElementById('project-root').innerHTML='<div class="container" style="padding:10rem 2.5rem;text-align:center;color:var(--fg-muted)">Project not found. <a href="projects.html" style="color:var(--amber)">← Back to projects</a></div>';
+    return;
+  }
+  document.title = p.title.replace(/&amp;/g,'&') + ' — Shubham Malpani';
+
+  const chartsHTML = p.interactive ? '' : `
+    <div style="margin-top:4rem">
+      <div class="label reveal" style="margin-bottom:0.5rem">Model Performance Charts</div>
+      <p style="font-size:0.8rem;color:var(--fg-muted);margin-bottom:2rem" class="reveal">Illustrative reproductions based on documented model outputs.</p>
+      <div class="charts-grid">
+        ${p.chartIds.map(c=>`
+          <div class="chart-card reveal ${c.wide?'chart-span-2':''}">
+            <div class="chart-header"><div class="chart-title">${c.title}</div><div class="chart-subtitle">${c.sub}</div></div>
+            <div class="chart-container"><canvas id="${c.id}"></canvas></div>
+          </div>`).join('')}
+      </div>
+    </div>`;
+
+  const interactiveHTML = p.interactive ? buildInteractive(p.interactiveType) : '';
+
   document.getElementById('project-root').innerHTML = `
     <div>
       <div class="container" style="padding:5rem 2.5rem 3rem">
         <div class="label reveal">${p.num} / ${p.cat}</div>
-        <h1 style="font-family:var(--font-d);font-size:clamp(2rem,5vw,3.5rem);margin-top:0.5rem;max-width:40rem" class="reveal">${p.title}</h1>
+        <h1 style="font-family:var(--font-d);font-size:clamp(2rem,5vw,3.5rem);margin-top:0.5rem;max-width:44rem" class="reveal">${p.title}</h1>
         <div class="project-tags reveal" style="margin-top:1.25rem">${p.tags.map(t=>`<span class="tag">${t}</span>`).join('')}</div>
         <div class="project-actions reveal" style="margin-top:1.5rem">
           <a href="${p.github}" target="_blank" rel="noreferrer" class="btn btn-amber-outline">
@@ -305,11 +402,9 @@ function renderProject(p) {
           <a href="projects.html" class="btn btn-outline">← All projects</a>
         </div>
       </div>
-
       <div class="detail-metrics">
         ${p.metrics.map(m=>`<div class="detail-metric"><div class="label" style="margin-bottom:0.5rem">${m.l}</div><div class="detail-metric-val">${m.v}</div></div>`).join('')}
       </div>
-
       <div class="container" style="padding:4rem 2.5rem">
         <div class="detail-two-col">
           <div class="reveal">
@@ -323,19 +418,8 @@ function renderProject(p) {
             </div>
           </div>
         </div>
-
-        <div style="margin-top:4rem">
-          <div class="label reveal" style="margin-bottom:0.5rem">Model Performance Charts</div>
-          <p style="font-size:0.8rem;color:var(--fg-muted);margin-bottom:2rem" class="reveal">Illustrative reproductions based on documented model outputs.</p>
-          <div class="charts-grid">
-            ${p.charts.map(c=>`
-              <div class="chart-card reveal ${c.id==='psi'||c.id==='iv'?'chart-span-2':''}">
-                <div class="chart-header"><div class="chart-title">${c.title}</div><div class="chart-subtitle">${c.sub}</div></div>
-                <div class="chart-container"><canvas id="${c.id}"></canvas></div>
-              </div>`).join('')}
-          </div>
-        </div>
-
+        ${chartsHTML}
+        ${interactiveHTML}
         <div class="cta-box reveal" style="margin-top:4rem">
           <div class="cta-bg grid-bg"></div>
           <div class="cta-inner">
@@ -352,12 +436,302 @@ function renderProject(p) {
       </div>
     </div>`;
 
-  // draw charts after DOM ready
-  requestAnimationFrame(() => {
-    p.charts.forEach(c => drawChart(c.id, c.type));
-  });
+  if (!p.interactive && p.renderCharts) {
+    requestAnimationFrame(() => setTimeout(() => p.renderCharts(), 100));
+  }
+  if (p.interactive) {
+    requestAnimationFrame(() => setTimeout(() => initInteractive(p.interactiveType), 100));
+  }
 }
 
+// ── Interactive tools ───────────────────────────────────────────
+function buildInteractive(type) {
+  if (type === 'binomial') return `
+    <div style="margin-top:4rem">
+      <div class="label reveal" style="margin-bottom:0.5rem">Interactive Binomial Tree</div>
+      <p style="font-size:0.82rem;color:var(--fg-muted);margin-bottom:1.5rem" class="reveal">Adjust inputs to see how the option price and lattice change in real time.</p>
+      <div class="chart-card reveal" style="padding:2rem">
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:1.25rem;margin-bottom:2rem">
+          ${[['bt-S','Stock Price (S)','₹',22000,5000,50000,500],
+             ['bt-K','Strike Price (K)','₹',22500,5000,50000,500],
+             ['bt-r','Risk-Free Rate','%',6.5,0,20,0.5],
+             ['bt-sig','Volatility (σ)','%',18,1,80,1],
+             ['bt-T','Time to Expiry','days',30,1,365,1],
+             ['bt-n','Steps (n)','',5,2,8,1]
+          ].map(([id,label,unit,val,min,max,step])=>`
+            <div>
+              <div class="slider-label"><span class="slider-name" style="font-size:0.62rem">${label}</span>
+                <span style="font-family:var(--font-m);font-size:0.8rem;color:var(--amber)">${unit}<span id="${id}-v">${val}</span></span>
+              </div>
+              <input type="range" id="${id}" min="${min}" max="${max}" step="${step}" value="${val}" style="width:100%;accent-color:var(--amber)">
+            </div>`).join('')}
+          <div>
+            <div class="slider-label"><span class="slider-name" style="font-size:0.62rem">Option Type</span></div>
+            <select id="bt-type" class="sc-select" style="margin-top:0.4rem">
+              <option value="european-call">European Call</option>
+              <option value="european-put">European Put</option>
+              <option value="american-call">American Call</option>
+              <option value="american-put">American Put</option>
+            </select>
+          </div>
+        </div>
+        <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:1rem;margin-bottom:2rem;padding:1.25rem;background:var(--bg);border-radius:0.5rem;border:1px solid var(--border)">
+          <div><div style="font-family:var(--font-m);font-size:0.6rem;color:var(--fg-muted);text-transform:uppercase;letter-spacing:0.1em">Option Price</div><div id="bt-price" style="font-family:var(--font-d);font-size:2rem;color:var(--amber);margin-top:0.2rem">—</div></div>
+          <div><div style="font-family:var(--font-m);font-size:0.6rem;color:var(--fg-muted);text-transform:uppercase;letter-spacing:0.1em">u (up factor)</div><div id="bt-u" style="font-family:var(--font-d);font-size:1.5rem;color:var(--fg);margin-top:0.2rem">—</div></div>
+          <div><div style="font-family:var(--font-m);font-size:0.6rem;color:var(--fg-muted);text-transform:uppercase;letter-spacing:0.1em">d (down factor)</div><div id="bt-d" style="font-family:var(--font-d);font-size:1.5rem;color:var(--fg);margin-top:0.2rem">—</div></div>
+          <div><div style="font-family:var(--font-m);font-size:0.6rem;color:var(--fg-muted);text-transform:uppercase;letter-spacing:0.1em">Risk-Neutral p</div><div id="bt-p" style="font-family:var(--font-d);font-size:1.5rem;color:var(--fg);margin-top:0.2rem">—</div></div>
+        </div>
+        <canvas id="bt-canvas" style="width:100%;max-height:380px;background:var(--bg);border-radius:0.5rem;border:1px solid var(--border)"></canvas>
+      </div>
+    </div>`;
+
+  if (type === 'blackscholes') return `
+    <div style="margin-top:4rem">
+      <div class="label reveal" style="margin-bottom:0.5rem">Interactive Black-Scholes Calculator</div>
+      <p style="font-size:0.82rem;color:var(--fg-muted);margin-bottom:1.5rem" class="reveal">Adjust inputs to compute call/put prices and the full Greeks suite in real time.</p>
+      <div class="chart-card reveal" style="padding:2rem">
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:1.25rem;margin-bottom:2rem">
+          ${[['bs-S','Stock Price (S)','₹',22000,5000,50000,500],
+             ['bs-K','Strike Price (K)','₹',22500,5000,50000,500],
+             ['bs-r','Risk-Free Rate','%',6.5,0,20,0.5],
+             ['bs-sig','Volatility (σ)','%',18,1,80,1],
+             ['bs-T','Time to Expiry','days',30,1,365,1]
+          ].map(([id,label,unit,val,min,max,step])=>`
+            <div>
+              <div class="slider-label"><span class="slider-name" style="font-size:0.62rem">${label}</span>
+                <span style="font-family:var(--font-m);font-size:0.8rem;color:var(--amber)">${unit}<span id="${id}-v">${val}</span></span>
+              </div>
+              <input type="range" id="${id}" min="${min}" max="${max}" step="${step}" value="${val}" style="width:100%;accent-color:var(--amber)">
+            </div>`).join('')}
+        </div>
+        <div style="display:grid;grid-template-columns:repeat(2,1fr);gap:1rem;margin-bottom:1.5rem">
+          <div style="padding:1.5rem;background:var(--bg);border:1px solid var(--border);border-radius:0.5rem">
+            <div style="font-family:var(--font-m);font-size:0.65rem;color:var(--amber);text-transform:uppercase;letter-spacing:0.15em;margin-bottom:0.75rem">Call Option</div>
+            <div id="bs-call" style="font-family:var(--font-d);font-size:2.5rem;color:var(--amber)">—</div>
+            <div style="display:grid;grid-template-columns:1fr 1fr;gap:0.5rem;margin-top:1rem">
+              <div><div style="font-family:var(--font-m);font-size:0.6rem;color:var(--fg-muted)">Delta (Δ)</div><div id="bs-call-delta" style="font-family:var(--font-m);font-size:0.9rem">—</div></div>
+              <div><div style="font-family:var(--font-m);font-size:0.6rem;color:var(--fg-muted)">Theta (Θ/day)</div><div id="bs-call-theta" style="font-family:var(--font-m);font-size:0.9rem">—</div></div>
+            </div>
+          </div>
+          <div style="padding:1.5rem;background:var(--bg);border:1px solid var(--border);border-radius:0.5rem">
+            <div style="font-family:var(--font-m);font-size:0.65rem;color:oklch(0.62 0.22 25);text-transform:uppercase;letter-spacing:0.15em;margin-bottom:0.75rem">Put Option</div>
+            <div id="bs-put" style="font-family:var(--font-d);font-size:2.5rem;color:oklch(0.62 0.22 25)">—</div>
+            <div style="display:grid;grid-template-columns:1fr 1fr;gap:0.5rem;margin-top:1rem">
+              <div><div style="font-family:var(--font-m);font-size:0.6rem;color:var(--fg-muted)">Delta (Δ)</div><div id="bs-put-delta" style="font-family:var(--font-m);font-size:0.9rem">—</div></div>
+              <div><div style="font-family:var(--font-m);font-size:0.6rem;color:var(--fg-muted)">Theta (Θ/day)</div><div id="bs-put-theta" style="font-family:var(--font-m);font-size:0.9rem">—</div></div>
+            </div>
+          </div>
+        </div>
+        <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:1rem;padding:1.25rem;background:var(--bg);border-radius:0.5rem;border:1px solid var(--border)">
+          <div><div style="font-family:var(--font-m);font-size:0.6rem;color:var(--fg-muted);text-transform:uppercase;letter-spacing:0.1em">d₁</div><div id="bs-d1" style="font-family:var(--font-m);font-size:0.95rem;margin-top:0.2rem">—</div></div>
+          <div><div style="font-family:var(--font-m);font-size:0.6rem;color:var(--fg-muted);text-transform:uppercase;letter-spacing:0.1em">d₂</div><div id="bs-d2" style="font-family:var(--font-m);font-size:0.95rem;margin-top:0.2rem">—</div></div>
+          <div><div style="font-family:var(--font-m);font-size:0.6rem;color:var(--fg-muted);text-transform:uppercase;letter-spacing:0.1em">Gamma (Γ)</div><div id="bs-gamma" style="font-family:var(--font-m);font-size:0.95rem;margin-top:0.2rem">—</div></div>
+          <div><div style="font-family:var(--font-m);font-size:0.6rem;color:var(--fg-muted);text-transform:uppercase;letter-spacing:0.1em">Vega (ν/1%σ)</div><div id="bs-vega" style="font-family:var(--font-m);font-size:0.95rem;margin-top:0.2rem">—</div></div>
+        </div>
+      </div>
+    </div>`;
+  return '';
+}
+
+function initInteractive(type) {
+  if (type === 'binomial') initBinomial();
+  if (type === 'blackscholes') initBS();
+}
+
+// ── Binomial Tree ───────────────────────────────────────────────
+function initBinomial() {
+  const ids = ['bt-S','bt-K','bt-r','bt-sig','bt-T','bt-n','bt-type'];
+  ids.forEach(id => {
+    const el = document.getElementById(id);
+    if (!el) return;
+    el.addEventListener(id==='bt-type'?'change':'input', () => {
+      if (id !== 'bt-type') {
+        const v = document.getElementById(id+'-v');
+        if (v) v.textContent = el.value;
+      }
+      updateBT();
+    });
+  });
+  updateBT();
+}
+
+function updateBT() {
+  const S   = +document.getElementById('bt-S').value;
+  const K   = +document.getElementById('bt-K').value;
+  const r   = +document.getElementById('bt-r').value / 100;
+  const sig = +document.getElementById('bt-sig').value / 100;
+  const T   = +document.getElementById('bt-T').value / 365;
+  const n   = +document.getElementById('bt-n').value;
+  const typ = document.getElementById('bt-type').value;
+
+  const dt  = T / n;
+  const u   = Math.exp(sig * Math.sqrt(dt));
+  const d   = 1 / u;
+  const p   = (Math.exp(r * dt) - d) / (u - d);
+  const disc= Math.exp(-r * dt);
+
+  document.getElementById('bt-u').textContent = u.toFixed(4);
+  document.getElementById('bt-d').textContent = d.toFixed(4);
+  document.getElementById('bt-p').textContent = p.toFixed(4);
+
+  // Build stock price tree
+  const stock = [];
+  for (let i = 0; i <= n; i++) {
+    stock[i] = [];
+    for (let j = 0; j <= i; j++) {
+      stock[i][j] = S * Math.pow(u, j) * Math.pow(d, i - j);
+    }
+  }
+
+  // Build option value tree (backward induction)
+  const opt = [];
+  for (let j = 0; j <= n; j++) {
+    const S_T = stock[n][j];
+    opt[j] = typ.includes('call') ? Math.max(S_T - K, 0) : Math.max(K - S_T, 0);
+  }
+  for (let i = n - 1; i >= 0; i--) {
+    const optNew = [];
+    for (let j = 0; j <= i; j++) {
+      const hold = disc * (p * opt[j + 1] + (1 - p) * opt[j]);
+      if (typ.includes('american')) {
+        const intrinsic = typ.includes('call') ? Math.max(stock[i][j] - K, 0) : Math.max(K - stock[i][j], 0);
+        optNew[j] = Math.max(hold, intrinsic);
+      } else {
+        optNew[j] = hold;
+      }
+    }
+    for (let j = 0; j <= i; j++) opt[j] = optNew[j];
+  }
+
+  document.getElementById('bt-price').textContent = '₹' + opt[0].toFixed(2);
+
+  // Draw lattice on canvas
+  const canvas = document.getElementById('bt-canvas');
+  if (!canvas) return;
+  const ctx = canvas.getContext('2d');
+  const W = canvas.offsetWidth; const H = 360;
+  canvas.width = W; canvas.height = H;
+  ctx.clearRect(0, 0, W, H);
+
+  const PAD = 40;
+  const colW = (W - PAD*2) / n;
+  const rowH = (H - PAD*2);
+
+  // Draw edges first
+  ctx.strokeStyle = 'rgba(100,90,80,0.5)'; ctx.lineWidth = 1;
+  for (let i = 0; i < n; i++) {
+    for (let j = 0; j <= i; j++) {
+      const x1 = PAD + i * colW;
+      const y1 = PAD + rowH * (i > 0 ? (j + 0.5*(i - 2*j < 0 ? 0 : 0)) / i : 0.5);
+      const y1c = PAD + (i === 0 ? H/2 - PAD : rowH * j / i);
+      const x2 = PAD + (i+1) * colW;
+      const y2u = PAD + rowH * (j+1) / (i+1);
+      const y2d = PAD + rowH * j / (i+1);
+      ctx.beginPath(); ctx.moveTo(x1, y1c); ctx.lineTo(x2, y2u); ctx.stroke();
+      ctx.beginPath(); ctx.moveTo(x1, y1c); ctx.lineTo(x2, y2d); ctx.stroke();
+    }
+  }
+
+  // Rebuild full option tree for colouring
+  const fullOpt = [];
+  for (let i = 0; i <= n; i++) { fullOpt[i] = new Array(i+1).fill(0); }
+  for (let j = 0; j <= n; j++) {
+    const S_T = stock[n][j];
+    fullOpt[n][j] = typ.includes('call') ? Math.max(S_T - K, 0) : Math.max(K - S_T, 0);
+  }
+  for (let i = n-1; i >= 0; i--) {
+    for (let j = 0; j <= i; j++) {
+      const hold = disc * (p * fullOpt[i+1][j+1] + (1-p) * fullOpt[i+1][j]);
+      if (typ.includes('american')) {
+        const intr = typ.includes('call') ? Math.max(stock[i][j]-K,0) : Math.max(K-stock[i][j],0);
+        fullOpt[i][j] = Math.max(hold, intr);
+      } else { fullOpt[i][j] = hold; }
+    }
+  }
+
+  // Draw nodes
+  for (let i = 0; i <= n; i++) {
+    for (let j = 0; j <= i; j++) {
+      const x = PAD + i * colW;
+      const y = i === 0 ? H/2 : PAD + rowH * j / i;
+      const val = fullOpt[i][j];
+      const intrinsic = typ.includes('call') ? Math.max(stock[i][j]-K,0) : Math.max(K-stock[i][j],0);
+      const isITM = intrinsic > 0;
+
+      ctx.beginPath();
+      ctx.arc(x, y, 18, 0, Math.PI*2);
+      ctx.fillStyle = isITM ? 'rgba(196,151,58,0.25)' : 'rgba(40,35,30,0.9)';
+      ctx.fill();
+      ctx.strokeStyle = isITM ? 'rgba(196,151,58,0.8)' : 'rgba(90,80,70,0.6)';
+      ctx.lineWidth = 1.5; ctx.stroke();
+
+      ctx.fillStyle = isITM ? 'rgba(230,185,100,1)' : 'rgba(180,165,145,0.9)';
+      ctx.font = `bold 10px JetBrains Mono, monospace`;
+      ctx.textAlign = 'center'; ctx.textBaseline = 'middle';
+      ctx.fillText('₹'+val.toFixed(0), x, y);
+    }
+  }
+}
+
+// ── Black-Scholes ───────────────────────────────────────────────
+function normCDF(x) {
+  const t = 1/(1+0.2316419*Math.abs(x));
+  const poly = t*(0.319381530+t*(-0.356563782+t*(1.781477937+t*(-1.821255978+t*1.330274429))));
+  const n = 1 - (1/Math.sqrt(2*Math.PI))*Math.exp(-0.5*x*x)*poly;
+  return x >= 0 ? n : 1-n;
+}
+function normPDF(x) { return Math.exp(-0.5*x*x)/Math.sqrt(2*Math.PI); }
+
+function initBS() {
+  ['bs-S','bs-K','bs-r','bs-sig','bs-T'].forEach(id => {
+    const el = document.getElementById(id);
+    if (!el) return;
+    el.addEventListener('input', () => {
+      const v = document.getElementById(id+'-v');
+      if (v) v.textContent = el.value;
+      updateBS();
+    });
+  });
+  updateBS();
+}
+
+function updateBS() {
+  const S   = +document.getElementById('bs-S').value;
+  const K   = +document.getElementById('bs-K').value;
+  const r   = +document.getElementById('bs-r').value / 100;
+  const sig = +document.getElementById('bs-sig').value / 100;
+  const T   = +document.getElementById('bs-T').value / 365;
+  if (T <= 0 || sig <= 0) return;
+
+  const sqrtT = Math.sqrt(T);
+  const d1 = (Math.log(S/K) + (r + 0.5*sig*sig)*T) / (sig*sqrtT);
+  const d2 = d1 - sig*sqrtT;
+
+  const call = S*normCDF(d1) - K*Math.exp(-r*T)*normCDF(d2);
+  const put  = K*Math.exp(-r*T)*normCDF(-d2) - S*normCDF(-d1);
+
+  const callDelta = normCDF(d1);
+  const putDelta  = normCDF(d1) - 1;
+  const gamma = normPDF(d1)/(S*sig*sqrtT);
+  const vega  = S*normPDF(d1)*sqrtT * 0.01; // per 1% change in vol
+  const callTheta = (-(S*normPDF(d1)*sig)/(2*sqrtT) - r*K*Math.exp(-r*T)*normCDF(d2)) / 365;
+  const putTheta  = (-(S*normPDF(d1)*sig)/(2*sqrtT) + r*K*Math.exp(-r*T)*normCDF(-d2)) / 365;
+
+  const fmt2 = n => n.toFixed(2);
+  const fmt4 = n => n.toFixed(4);
+  document.getElementById('bs-call').textContent = '₹'+fmt2(call);
+  document.getElementById('bs-put').textContent  = '₹'+fmt2(put);
+  document.getElementById('bs-call-delta').textContent = fmt4(callDelta);
+  document.getElementById('bs-put-delta').textContent  = fmt4(putDelta);
+  document.getElementById('bs-call-theta').textContent = '₹'+fmt2(callTheta);
+  document.getElementById('bs-put-theta').textContent  = '₹'+fmt2(putTheta);
+  document.getElementById('bs-d1').textContent    = fmt4(d1);
+  document.getElementById('bs-d2').textContent    = fmt4(d2);
+  document.getElementById('bs-gamma').textContent = fmt4(gamma);
+  document.getElementById('bs-vega').textContent  = '₹'+fmt2(vega);
+}
+
+// ── Boot ──────────────────────────────────────────────────────
 const id = new URLSearchParams(window.location.search).get('id');
 renderProject(PROJECTS[id]);
 </script>
